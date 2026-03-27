@@ -16,11 +16,13 @@ footer {
 }
 
 .footer-section h2 {
+  text-align: start;
   color: #8ec5ff;
   margin-bottom: 15px;
 }
 
 .footer-section h3 {
+  text-align: start;
   color: #8ec5ff;
   margin-bottom: 15px;
 }

@@ -5,15 +5,16 @@ function Footer(){
             
             <div class="footer-section">
                 <h2>Atlas</h2>
-                <p>Sua empresa sob controle.</p>
+                <p>Plataforma de gestão de equipes e projetos. Organize tarefas, acompanhe o progresso e colabore com eficiência</p>
             </div>
 
             <div class="footer-section">
                 <h3>Links</h3>
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Funcionalidades</a></li>
-                    <li><a href="#">Planos</a></li>
+                    <li><a href="/#inicio">Início</a></li>
+                    <li><a href="/#sobre">Sobre</a></li>
+                    <li><a href="/#contato">Contato</a></li>
+                    <li><a href="/#planos">Planos</a></li>
                 </ul>
             </div>
 

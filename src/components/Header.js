@@ -13,7 +13,7 @@ function Header(){
           <a href='/#contato'>Contato</a>
         </nav>
         <nav>
-          <Link className='login' to='/Login'>Entrar</Link >
+          <Link className='login' to='/login'>Entrar</Link>
           <a className='cadastro' href='/#planos'>Começar Agora</a>
         </nav>
       </header>

@@ -4,9 +4,9 @@ import './styles/App.css';
 import './styles/Header.css';
 import './styles/Home.css';
 import './styles/Footer.css'
+import './styles/Login.css'
 
 import Home from './pages/Home'
-import Cadastro from './pages/Cadastro'
 import Login from './pages/Login'
 import Pagamento from './pages/Pagamento'
 
@@ -22,9 +22,8 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/Login' element={<Login />} />
-        <Route path='/Pagamento' element={<Pagamento />}></Route>
-        <Route path='/Cadastro' element={<Cadastro />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/pagamento' element={<Pagamento />} />
       </Routes>
 
       <Footer />
