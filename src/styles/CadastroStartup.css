@@ -7,14 +7,20 @@ main img{
     box-shadow: none;
 }
 
-.loginForms{
+.cadastroForms{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     width: 100%;
-    margin: auto 100px;
-    margin-left: 200px;
+    margin: auto;
+}
+
+.cadastroForms form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .links{
@@ -31,40 +37,37 @@ main img{
     text-decoration: underline;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    margin: auto;
-    justify-content: center;
-    align-self: center;
-}
-
-label{
+.cadastroForms label{
     color: #080B2A;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+.inputBox{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 input{
     font-size: 15px;
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
     outline: none;
     border: solid 3px rgba(0, 0, 0, 0.080);
     padding: 15px;
     transition: ease 0.3s;
+    
 }
 
-button{
+.cadastroForms button{
     display: flex;
     align-items: center;
     margin-top: 15px;
     justify-content: center;
-    width: 86%;
+    width: 70%;
     background-color: #080B2A;
     color: white;
     padding: 15px;
@@ -75,4 +78,13 @@ button{
 
 input:focus{
     border: solid 3px #3647ff;
+}
+
+.gridBox{
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 60px;
+    justify-content: center;
+    align-items: center;
 }

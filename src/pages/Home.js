@@ -22,8 +22,8 @@ function Home(){
                     <h2>Atlas — Onde sua empresa <strong> ganha controle.</strong></h2>
                     <p>Gerencie clientes, finanças, tarefas e equipes em uma plataforma única, simples e eficiente. Tudo que sua empresa precisa para crescer.</p>
                     <div className='botoes'>
-                        <Link id='cadastroEmpresa' to='/Cadastro'><FontAwesomeIcon icon={faBuilding} />  Cadastre sua empresa</Link>
-                        <Link id='cadastroFuncionario' to ='/Cadastro-funcionario'><FontAwesomeIcon icon={faUser} />  Cadastre como funcionário</Link>
+                        <Link id='cadastroStartup' to='/cadastrostartup'><FontAwesomeIcon icon={faBuilding} />  Cadastre sua empresa</Link>
+                        <Link id='cadastroFuncionario' to ='/cadastrofuncionario'><FontAwesomeIcon icon={faUser} />  Cadastre como funcionário</Link>
                     </div>
                 </div>
                 <img src='/imagens/home1.png' alt='Imagem do Altas'/>
@@ -90,7 +90,7 @@ function Home(){
                             <li> <FontAwesomeIcon className='checkIcon' icon={faCheck}/>Dashboard completo</li>
                             <li> <FontAwesomeIcon className='checkIcon' icon={faCheck}/>Suporte 24 horas</li>
                         </ul>
-                        <Link to='/cadastro' className='botaoPlanos'>Comece Agora</Link>
+                        <Link to='/cadastrostartup' className='botaoPlanos'>Comece Agora</Link>
                     </div>
                     <div className='cardP' id='popular'>
                         <span className='maisPopular'>Mais Popular</span>
