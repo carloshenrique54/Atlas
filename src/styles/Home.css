@@ -447,3 +447,71 @@ h4{
 #planos .planoT{
     margin-bottom: 80px;
 }
+
+
+#sobre {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+
+#sobre h4 {
+    color: #3b82f6;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+#sobre h3:first-of-type {
+    color: #0f172a; 
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+#sobre > p {
+    color: #475569;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+
+.cardS {
+    background: #ffffff;
+    border: 1px solid #e2e8f0; 
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: left; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardS:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.cardS h3 {
+    color: #0f172a;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.cardS p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+    }
+
+    
