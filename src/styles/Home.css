@@ -92,7 +92,7 @@ h4{
     padding: 20px;
 }
 
-#funcionalidades h3, #beneficios h3{
+#funcionalidades h3, #beneficios h3, #sobre h3, #contato h3{
     font-weight: 750;
     font-size: 40px;
     margin-top: 0;
@@ -242,4 +242,34 @@ h4{
     font-size: 15px;
     color: #080b2aac;
     font-weight: 600;
+}
+
+#sobre{
+    text-align: center;
+    display: flex;
+}
+
+#sobre h3{
+    margin-bottom: 10px;
+}
+
+.sobre-container{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#sobre p{
+    font-size: 20px;
+}
+
+.cardS{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardS h3{
+    font-size: 25px;
+    color: #3647ff;
+    color: aqua;
 }
