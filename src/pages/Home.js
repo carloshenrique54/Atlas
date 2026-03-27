@@ -166,17 +166,49 @@ function Home(){
                     </div>
                 </div>
 
-                <div className="formulario">
-                    <h3>Fale com a gente</h3>
+<div className="formulario">
+    <h3>Reportar Problema</h3>
+    <p className="subtitulo">Detalhes do problema</p>
+    <p className="instrucao">Preencha os campos abaixo para que possamos ajudá-lo.</p>
 
-                    <form>
-                        <input type="text" placeholder="Seu nome" required />
-                        <input type="email" placeholder="Seu email" required />
-                        <textarea placeholder="Sua mensagem" required></textarea>
+    <form>
+        
+        <div className="row">
+            <input type="text" placeholder="Seu nome" required />
+            <input type="text" placeholder="Sobrenome" required />
+        </div>
 
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
+        <input type="email" placeholder="Email" required />
+
+        <div className="row">
+            <div className="field-group">
+                <label>Categoria</label>
+                <select required>
+                    <option value="">Selecione</option>
+                    <option value="suporte">Suporte Técnico</option>
+                    <option value="financeiro">Financeiro</option>
+                    <option value="sugestao">Sugestão</option>
+                </select>
+            </div>
+            <div className="field-group">
+                <label>Assunto</label>
+                <input type="text" placeholder="Seu problema resumido" required />
+            </div>
+        </div>
+
+        <div className="field-group">
+            <label>Descrição</label>
+            <textarea 
+                placeholder="Descreva o erro com o máximo de detalhes possível: o que estava fazendo, o que esperava acontecer e o que aconteceu..." 
+                required
+            ></textarea>
+        </div>
+
+        <button type="submit">
+            <span className="icon-send">➤</span> Enviar
+        </button>
+    </form>
+</div>
             </section>
         </div>
     )
