@@ -143,29 +143,31 @@ function Home(){
                     </div>
                 </div>
             </section>
-            <section id="contato">
-                <h4>CONTATO</h4>
+            <section id="sobre">
+                <h4>Contato</h4>
                 <h3>Tem alguma dúvida? Nos conte!</h3>
-                <h2>Contato</h2>
+                <p>Perguntas Frequentes</p>
 
-                <div className="faq">
-                    <h3>Perguntas Frequentes</h3>
 
-                    <div className="faq-item">
-                    <h4>O Atlas é gratuito?</h4>
+                <div className="sobre-container">
+                
+
+                    <div className="cardS">
+                    <h3>O Atlas é gratuito?</h3>
                     <p>Oferecemos planos gratuitos e pagos, dependendo das necessidades da sua empresa.</p>
                     </div>
 
-                    <div className="faq-item">
-                    <h4>Posso cancelar a qualquer momento?</h4>
+                    <div className="cardS">
+                    <h3>Posso cancelar a qualquer momento?</h3>
                     <p>Sim, você pode cancelar ou alterar seu plano quando quiser.</p>
                     </div>
 
-                    <div className="faq-item">
-                    <h4>Preciso instalar algo?</h4>
+                    <div className="cardS">
+                    <h3>Preciso instalar algo?</h3>
                     <p>Não, o Atlas funciona totalmente online.</p>
                     </div>
                 </div>
+                
 
 <div className="formulario">
     <h3>Reportar Problema</h3>
