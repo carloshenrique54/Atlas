@@ -77,7 +77,7 @@ function Home(){
             </section>
             <section id="planos">
                 <h4>PLANOS</h4>
-                <h3>Planos que crescem com sua empresa</h3>
+                <h3 className='planoT'>Planos que crescem com sua empresa</h3>
                 <div className='planos-container'>
                     <div className='cardP'>
                         <FontAwesomeIcon className='planosIcon' icon={faUser}/>
@@ -90,9 +90,10 @@ function Home(){
                             <li> <FontAwesomeIcon className='checkIcon' icon={faCheck}/>Dashboard completo</li>
                             <li> <FontAwesomeIcon className='checkIcon' icon={faCheck}/>Suporte 24 horas</li>
                         </ul>
-                        <Link to='/Cadastro' className='botaoPlanos'>Comece Agora</Link>
+                        <Link to='/cadastro' className='botaoPlanos'>Comece Agora</Link>
                     </div>
-                    <div className='cardP'>
+                    <div className='cardP' id='popular'>
+                        <span className='maisPopular'>Mais Popular</span>
                         <FontAwesomeIcon className='planosIcon' icon={faChartLine}/>
                         <h2>Growth</h2>
                         <p>Para empresas em crescimento acelerado</p>
@@ -103,7 +104,7 @@ function Home(){
                             <li> <FontAwesomeIcon className='checkIcon' icon={faCheck}/>Suporte prioritário</li>
                             <li> <FontAwesomeIcon className='checkIcon' icon={faCheck}/>Suporte prioritário</li>
                         </ul>
-                        <Link to='/Pagamento' className='botaoPlanos'>Comece Agora</Link>
+                        <Link to='/pagamento' className='botaoPlanos'>Comece Agora</Link>
                     </div>
                     <div className='cardP'>
                         <FontAwesomeIcon className='planosIcon' icon={faBuilding}/>

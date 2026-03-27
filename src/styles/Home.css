@@ -92,7 +92,7 @@ h4{
     padding: 20px;
 }
 
-#funcionalidades h3, #beneficios h3, #sobre h3, #contato h3{
+#funcionalidades h3, #beneficios h3, #sobre h3, #contato h3, #planos h3{
     font-weight: 750;
     font-size: 40px;
     margin-top: 0;
@@ -182,6 +182,7 @@ h4{
     flex-direction: column;
     background-color: white;
     padding: 20px;
+    position: relative;
     align-items: flex-start;
     justify-content: flex-end;
     border-radius: 15px;
@@ -229,6 +230,7 @@ h4{
 
 .cardP ul{
     padding: 0;
+    margin-top: 0px;
 }
 
 .cardP h3{
@@ -238,10 +240,15 @@ h4{
     flex-direction: row;
 }
 
+#planos h3{
+    margin-bottom: 20px;
+}
+
 .cardP strong{
     font-size: 15px;
     color: #080b2aac;
     font-weight: 600;
+    align-self: end;
 }
 
 #sobre{
@@ -414,4 +421,29 @@ h4{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #080B2A;
+}
+
+#popular{
+    border: 3px solid #3647ff;
+}
+
+#popular span{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.maisPopular {
+  position: absolute;
+  top: -17px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3647ff;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+#planos .planoT{
+    margin-bottom: 80px;
 }
