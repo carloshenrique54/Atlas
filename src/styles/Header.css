@@ -1,0 +1,41 @@
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.100);
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-left: 100px;
+    padding-right: 100px;
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.050);
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: #080B2A;
+}
+
+.cadastro{
+    font-size: 18px;
+    background-color: #080B2A;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.login{
+    color: #080B2A;
+    font-size: 18px;
+    font-weight: 600;
+}

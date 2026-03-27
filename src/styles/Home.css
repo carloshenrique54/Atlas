@@ -1,0 +1,245 @@
+section{
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: 100px;
+    margin: 60px;
+    color: #080B2A;
+    justify-content: space-between;
+}
+
+#inicio{
+    display: flex;
+    flex-direction: row;
+}
+
+#inicio h2{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+#inicio strong{
+    color: #3647ff
+}
+
+#inicio-texto{
+    width: 50%;
+}
+
+#inicio p{
+    color: #676767;
+    font-weight: 600;
+}
+
+.botoes{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+}
+
+#cadastroEmpresa{
+    background-color: #3647ff;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid rgb(0, 0, 0, 0.08);
+    transition: ease 0.3s;
+}
+
+#cadastroEmpresa:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px #98cdff9a;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.384);
+}
+
+#cadastroFuncionario{
+    padding: 15px;
+    border-radius: 10px;
+    color: #080B2A;
+    border: 3px solid rgb(0, 0, 0, 0.08);
+    transition: ease 0.3s;
+}
+
+#cadastroFuncionario:hover{
+    transform: scale(1.1);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.384);
+}
+
+img{
+    width: 40%;
+    height: auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.315);
+    border-radius: 20px;
+}
+
+h3, h4{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+h4{
+    color: #3647ff;
+    letter-spacing: 2px;
+}
+
+#funcionalidades{
+    background-color: #e9f8ff;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 150px;
+    padding: 20px;
+}
+
+#funcionalidades h3, #beneficios h3{
+    font-weight: 750;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 80px;
+    color: #080B2A;
+}
+
+.func-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.cardF{
+    display: flex;
+    background-color: white;
+    padding: 25px;
+    flex-direction: column;
+    border-radius: 25px;
+    border: 3px solid rgb(0, 0, 0, 0.080);
+    transition: ease 0.3s;
+}
+
+.cardF:hover{
+    scale: calc(1.05);
+}
+
+.funcIcon{
+    font-size: 30px;
+    color: #3647ff;
+    margin-top: 25px;
+}
+
+.cardF h2{
+    margin-top: 35px;
+    color: #080B2A;
+}
+
+.cardF p{
+    font-weight: 600;
+    color: #080b2ab4;
+}
+
+#beneficios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bene-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.cardB{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.beneIcon{
+    color: #3647ff;
+    border: 2px solid rgba(0, 0, 0, 0.080);
+    padding: 17px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#planos{
+    margin: 0;
+    padding: 40px;
+    background-color: #e9f8ff;
+}
+
+.planos-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 100px;
+}
+
+.cardP{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-radius: 15px;
+    border: 3px solid rgba(0, 0, 0, 0.080);
+}
+
+.planosIcon{
+    margin-top: 30px;
+    color: #3647ff;
+    font-size: 40px;
+}
+
+.cardP li{
+    list-style: none;
+}
+
+.cardP h2{
+    color: #080B2A;
+    font-size: 35px;
+}
+
+.cardP p{
+    color: #080b2a99;
+    font-weight: 600;
+}
+
+.botaoPlanos{
+    display: flex;
+    justify-content: center;
+    background-color: #080B2A;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    align-items: center;
+    align-self: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.checkIcon{
+    color: rgb(0, 196, 0);
+}
+
+.cardP ul{
+    padding: 0;
+}
+
+.cardP h3{
+    color: #080B2A;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cardP strong{
+    font-size: 15px;
+    color: #080b2aac;
+    font-weight: 600;
+}
