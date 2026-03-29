@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuilding, faUser, faUserGroup, faDollarSign, faCheckSquare, faChartLine, faLayerGroup, faBolt, faShieldHalved, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from "react-router-dom";
 
 function Home(){
     const location = useLocation();
+    const [openIndex, setOpenIndex] = useState(null);
 
     useEffect(() => {
     if (location.hash) {
@@ -15,6 +16,11 @@ function Home(){
         }
     }
     }, [location]);
+
+    const toggle = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
     return(
         <div className="home">
             <section id="inicio">
@@ -143,29 +149,69 @@ function Home(){
                     </div>
                 </div>
             </section>
-            <section id="sobre">
-                <h4>Contato</h4>
+            <section id="contato">
+                <h4>CONTATO</h4>
                 <h3>Tem alguma dúvida? Nos conte!</h3>
                 <p>Perguntas Frequentes</p>
 
 
-                <div className="sobre-container">
-                
+                <div className="faq-container">
 
-                    <div className="cardS">
-                    <h3>O Atlas é gratuito?</h3>
+                <div 
+                    className={`cardC ${openIndex === 0 ? "active" : ""}`}
+                    onClick={() => toggle(0)}
+                >
+                    <h5>O Atlas é gratuito?</h5>
                     <p>Oferecemos planos gratuitos e pagos, dependendo das necessidades da sua empresa.</p>
-                    </div>
+                </div>
 
-                    <div className="cardS">
-                    <h3>Posso cancelar a qualquer momento?</h3>
+                <div 
+                    className={`cardC ${openIndex === 1 ? "active" : ""}`}
+                    onClick={() => toggle(1)}
+                > 
+                    <h5>Posso cancelar a qualquer momento?</h5>
                     <p>Sim, você pode cancelar ou alterar seu plano quando quiser.</p>
-                    </div>
+                </div>
 
-                    <div className="cardS">
-                    <h3>Preciso instalar algo?</h3>
+                <div 
+                    className={`cardC ${openIndex === 2 ? "active" : ""}`}
+                    onClick={() => toggle(2)}
+                >
+                    <h5>Preciso instalar algo?</h5>
                     <p>Não, o Atlas funciona totalmente online.</p>
-                    </div>
+                </div>
+                <div 
+                    className={`cardC ${openIndex === 4 ? "active" : ""}`}
+                    onClick={() => toggle(4)}
+                    >
+                    <h5>Meus dados estão seguros?</h5>
+                    <p>Sim, utilizamos criptografia e boas práticas de segurança para proteger suas informações.</p>
+                </div>
+
+                <div 
+                    className={`cardC ${openIndex === 5 ? "active" : ""}`}
+                    onClick={() => toggle(5)}
+                    >
+                    <h5>Posso adicionar mais usuários depois?</h5>
+                    <p>Claro, você pode aumentar ou reduzir a quantidade de usuários conforme necessário.</p>
+                </div>
+
+                <div 
+                    className={`cardC ${openIndex === 6 ? "active" : ""}`}
+                    onClick={() => toggle(6)}
+                    >
+                    <h5>O Atlas integra com outras ferramentas?</h5>
+                    <p>Sim, estamos trabalhando em integrações com ferramentas populares do mercado.</p>
+                </div>
+
+                <div 
+                    className={`cardC ${openIndex === 7 ? "active" : ""}`}
+                    onClick={() => toggle(7)}
+                    >
+                    <h5>Tem suporte ao cliente?</h5>
+                    <p>Sim, oferecemos suporte para todos os planos, com prioridade nos planos pagos.</p>
+                </div>
+
                 </div>
                 
 

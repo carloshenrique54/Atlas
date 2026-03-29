@@ -44,7 +44,7 @@ section{
     text-align: center;
 }
 
-#cadastroEmpresa{
+#cadastroStartup{
     background-color: #3647ff;
     padding: 15px;
     border-radius: 10px;
@@ -53,7 +53,7 @@ section{
     transition: ease 0.3s;
 }
 
-#cadastroEmpresa:hover{
+#cadastroStartup:hover{
     transform: scale(1.1);
     box-shadow: 0px 0px 20px #98cdff9a;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.384);
@@ -73,9 +73,8 @@ section{
 }
 
 img{
-    width: 40%;
+    width: 50%;
     height: auto;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.315);
     border-radius: 20px;
 }
 
@@ -92,13 +91,15 @@ h4{
 
 #funcionalidades{
     background-color: #e9f8ff;
+    border-top: solid 3px rgb(0, 0, 0, 0.08);
+    border-bottom: solid 3px rgb(0, 0, 0, 0.08);
     margin-right: 0;
     margin-left: 0;
     margin-top: 150px;
     padding: 20px;
 }
 
-#funcionalidades h3, #beneficios h3, #sobre h3, #contato h3, #planos h3{
+#funcionalidades h3, #beneficios h3, #sobre h3, #contato h3, #planos h3, #sobre h3{
     font-weight: 750;
     font-size: 40px;
     margin-top: 0;
@@ -175,6 +176,8 @@ h4{
     margin: 0;
     padding: 40px;
     background-color: #e9f8ff;
+    border-top: solid 3px rgb(0, 0, 0, 0.08);
+    border-bottom: solid 3px rgb(0, 0, 0, 0.08);
 }
 
 .planos-container{
@@ -213,6 +216,18 @@ h4{
 .cardP p{
     color: #080b2a99;
     font-weight: 600;
+}
+
+.cardP li{
+    color: #080b2a99;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cardP li .checkIcon{
+    font-size: 20px;
 }
 
 .botaoPlanos{
@@ -276,15 +291,67 @@ h4{
     font-size: 20px;
 }
 
-.cardS{
+#contato{
+    border-top: solid 3px rgb(0, 0, 0, 0.08);
+    border-bottom: solid 3px rgb(0, 0, 0, 0.08);
+    text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.cardS h3{
-    font-size: 25px;
-    color: #3647ff;
-    color: aqua;
+.faq-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-container h3{
+    margin-bottom: 20px;
+    font-size: 10px;
+}
+
+.cardC{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 3px solid rgb(0, 0, 0, 0.08);
+    border-radius: 15px;
+    text-align: left;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.cardC h5{
+    color: #080B2A;
+    font-size: 20px;
+    transition: ease 0.3s;
+    margin: 0;
+    margin: 10px;
+}
+
+.cardC p {
+    min-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: none;
+    transition: ease 0.3s;
+}
+
+.cardC.active p {
+    max-height: 150px;
+    display: block;
+    opacity: 1;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-top: 15px;
+    border-top: solid 3px rgb(0, 0, 0, 0.08);
+}
+
+.cardC.active h5 {
+    color: #000966;
 }
 
 .formulario {
@@ -409,8 +476,6 @@ h4{
     color: #080b2a66;
 }
 
-/* --- Barra de Rolagem Carlosta sua gostosa lindona deixa eu te chupar--- */
-
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -459,16 +524,9 @@ h4{
     padding: 60px 20px;
     background-color: #ffffff;
     text-align: center;
-    font-family: 'Inter', sans-serif;
-}
-
-
-#sobre h4 {
-    color: #3b82f6;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #sobre h3:first-of-type {
@@ -478,7 +536,7 @@ h4{
     margin-bottom: 15px;
 }
 
-#sobre > p {
+#sobre p {
     color: #475569;
     max-width: 600px;
     margin: 0 auto 40px auto;
@@ -486,7 +544,13 @@ h4{
     text-align: center;
 }
 
-
+.sobre-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
 
 .cardS {
     background: #ffffff;
