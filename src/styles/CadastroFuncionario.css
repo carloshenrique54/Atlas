@@ -1,0 +1,35 @@
+#cadastroFuncForms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#cadastroFuncForms form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#cadastroFuncForms input{
+    padding: 15px;
+    border-radius: 10px;
+    border: solid 3px rgba(0, 0, 0, 0.080);
+    outline: none;
+    transition: ease 0.3s;
+}
+
+#cadastroFuncForms input:focus{
+    border: solid 3px #3647ff;
+}
+
+#numbersCadastro{
+    display: flex;
+    gap: 20px;
+}
+
+#cadastroFuncForms .inputNumber{
+    display: flex;
+    flex-direction: column;
+}

@@ -9,11 +9,11 @@ function Login(){
                     <label>Senha:</label>
                     <input required type="password" placeholder="Insira sua senha"></input>
                     <button>Fazer Login</button>
-                </form>
-                <div className="links">
-                    <a href="#">Esqueceu sua senha?</a>
-                    <p>Não tem conta? <a href="/#planos">Conheça nossos planos!</a></p>
-                </div>
+                    <div className="links">
+                        <a href="#">Esqueceu sua senha?</a>
+                        <a href="/#planos">Conheça nossos planos!</a>
+                    </div>
+                </form> 
             </div>
         </main>
     )

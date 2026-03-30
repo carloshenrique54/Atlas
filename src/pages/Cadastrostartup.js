@@ -9,8 +9,8 @@ function Cadastro(){
                     <div className='gridBox'>
 
                         <div className='inputBox'>
-                        <label>Nome da StartUp:</label>
-                        <input required type="text" placeholder="Coloque o nome de sua Startup"></input>
+                            <label>Nome da StartUp:</label>
+                            <input required type="text" placeholder="Coloque o nome de sua Startup"></input>
                         </div>
 
                         <div className='inputBox'>
@@ -49,11 +49,11 @@ function Cadastro(){
                         </div>
                     </div>
                     <button>Fazer Login</button>
+                    <div className="links">
+                        <p>Ja tem uma conta? <Link to="/login">Faça login</Link></p>
+                        <Link to="/cadastrofuncionario">Cadastrar como funcionario</Link>
+                    </div>
                 </form>
-                <div className="links">
-                    <p>Ja tem uma conta? <Link to="/login">Faça login</Link></p>
-                    <Link to="/cadastrofuncionario">Cadastrar como funcionario</Link>
-                </div>
             </div>
         </main>
     )

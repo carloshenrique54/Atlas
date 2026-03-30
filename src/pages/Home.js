@@ -216,8 +216,7 @@ function Home(){
                 
 
 <div className="formulario">
-    <h3>Reportar Problema</h3>
-    <p className="subtitulo">Detalhes do problema</p>
+    <h3>Entre em contato</h3>
     <p className="instrucao">Preencha os campos abaixo para que possamos ajudá-lo.</p>
 
     <form>
@@ -234,6 +233,7 @@ function Home(){
                 <label>Categoria</label>
                 <select required>
                     <option value="">Selecione</option>
+                    <option value="">Cadastrar Empresa</option>
                     <option value="suporte">Suporte Técnico</option>
                     <option value="financeiro">Financeiro</option>
                     <option value="sugestao">Sugestão</option>
@@ -248,7 +248,7 @@ function Home(){
         <div className="field-group">
             <label>Descrição</label>
             <textarea 
-                placeholder="Descreva o erro com o máximo de detalhes possível: o que estava fazendo, o que esperava acontecer e o que aconteceu..." 
+                placeholder="Nos de uma descrição mais elaborada do problema ou elabore sua sugestão ou motivo de entrar em contato!" 
                 required
             ></textarea>
         </div>

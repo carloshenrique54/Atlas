@@ -21,6 +21,7 @@ main img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 80%;
 }
 
 .links{
@@ -51,9 +52,9 @@ main img{
     flex-direction: column;
 }
 
-input{
+.inputBox input{
     font-size: 15px;
-    width: 100%;
+    width: 87.5%;
     border-radius: 10px;
     outline: none;
     border: solid 3px rgba(0, 0, 0, 0.080);
@@ -67,7 +68,7 @@ input{
     align-items: center;
     margin-top: 15px;
     justify-content: center;
-    width: 70%;
+    width: 100%;
     background-color: #080B2A;
     color: white;
     padding: 15px;
@@ -82,7 +83,7 @@ input:focus{
 
 .gridBox{
     display: grid;
-    width: 80%;
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 60px;
     justify-content: center;

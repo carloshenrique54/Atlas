@@ -7,10 +7,13 @@ import './styles/Footer.css'
 import './styles/Login.css'
 import './styles/CadastroStartup.css'
 import './styles/Pagamento.css'
+import './styles/CadastroFuncionario.css'
+
 
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Pagamento from './pages/Pagamento'
+import CadastroFuncionario from './pages/Cadastro-funcionario';
 import CadastroStartup from './pages/Cadastrostartup'
 
 import Header from './components/Header';
@@ -28,6 +31,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/cadastrostartup' element={<CadastroStartup />} />
         <Route path='/pagamento' element={<Pagamento />} />
+        <Route path='/cadastrofuncionario' element={<CadastroFuncionario />} />
       </Routes>
 
       <Footer />
