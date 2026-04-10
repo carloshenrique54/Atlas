@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuilding, faUser, faUserGroup, faDollarSign, faCheckSquare, faChartLine, faLayerGroup, faBolt, faShieldHalved, faCheck } from '@fortawesome/free-solid-svg-icons'
-import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Home(){
     const location = useLocation();
@@ -22,7 +22,13 @@ function Home(){
     };
 
     return(
-        <div className="home">
+        <motion.div 
+            className="home"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+        >
             <section id="inicio">
                 <div id='inicio-texto'>
                     <h2>Atlas — Onde sua empresa <strong> ganha controle.</strong></h2>
@@ -259,7 +265,7 @@ function Home(){
     </form>
 </div>
             </section>
-        </div>
+        </motion.div>
     )
 }
 

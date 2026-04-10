@@ -32,6 +32,15 @@ a{
     color: white;
     padding: 10px;
     border-radius: 10px;
+    transition: ease 0.3s;
+}
+
+.cadastro:hover{
+    background-color: #080b2ae8;
+}
+
+.cadastro:active{
+    transform: scale(0.8, 0.8);
 }
 
 .login{
