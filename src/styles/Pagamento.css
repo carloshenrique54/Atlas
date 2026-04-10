@@ -13,7 +13,6 @@ main form{
     width: 50%;
 }
 
-
 .informacoesPessoais{
     display: flex;
     flex-direction: column;
