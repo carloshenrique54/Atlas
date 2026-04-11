@@ -1,22 +1,60 @@
 # Atlas
 
-![Version](https://img.shields.io/badge/version-1.0.0-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue)
+[![React](https://img.shields.io/badge/react-19.2.4-brightgreen)](https://reactjs.org/)
+[![JavaScript](https://img.shields.io/badge/javascript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-O Atlas é uma ferramenta desenvolvida para facilitar a organização e visualização de projetos de forma eficiente.
+## Descrição do Projeto
+O Atlas é um projeto construído com as tecnologias mais recentes do ecossistema JavaScript para criar aplicações dinâmicas e interativas.
 
 ## Funcionalidades
-- Gestão de tarefas
-- Visualização de dados
-- Relatórios personalizáveis
+- Navegação entre páginas
+- Animações fluidas
+- Estrutura modular e reutilizável
+
+## Tecnologias Utilizadas
+| Tecnologia | Versão |
+|------------|--------|
+| React | 19.2.4 |
+| React Router DOM | 7.14.0 |
+| Framer Motion | 12.38.0 |
+| FontAwesome | 7.2.0 |
+| Swup | 4.8.3 |
 
 ## Como Usar
-1. Clone o repositório: `git clone https://github.com/carloshenrique54/Atlas`
-2. Navegue até a pasta do projeto.
-3. Execute `npm install` para instalar as dependências.
-4. Inicie a aplicação com `npm start`.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/carloshenrique54/Atlas.git
+   ```
+2. Navegue até a pasta do projeto:
+   ```bash
+   cd Atlas
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm start
+   ```
+5. Para construir a aplicação para produção:
+   ```bash
+   npm run build
+   ```
+6. Para executar os testes:
+   ```bash
+   npm test
+   ```
 
-## Contribuições
-Agradeço a [SolariumKey777](https://github.com/SolariumKey777) pelo suporte e contribuições para este projeto.
+## Estrutura de Pastas
+- `src/` - código fonte da aplicação
+- `public/` - arquivos públicos
+- `tests/` - testes automatizados
 
-## Licença
-Este projeto está licenciado sob a licença MIT.
+## Referências
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+## Créditos
+SolariumKey777
