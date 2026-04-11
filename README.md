@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# 📊 Atlas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Plataforma de organização e gerenciamento de tarefas para empresas e startups
 
-## Available Scripts
+## 🎯 Sobre o Projeto
 
-In the project directory, you can run:
+**Atlas** é um aplicativo web desenvolvido como projeto escolar do curso técnico em Desenvolvimento de Sistemas do SENAI. A plataforma foi criada para auxiliar empresas e startups na organização e gestão de tarefas, proporcionando uma solução intuitiva e eficiente para o gerenciamento de projetos.
 
-### `npm start`
+## ✨ Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📋 Criação e gerenciamento de tarefas
+- 👥 Organização por equipes
+- 🎨 Interface moderna e responsiva
+- ⚡ Animações fluidas com Framer Motion
+- 🧭 Navegação rápida com React Router
+- 📱 Design mobile-friendly
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tecnologias Utilizadas
 
-### `npm test`
+- **Frontend Framework**: [React](https://reactjs.org/) 19.2.4
+- **Roteamento**: [React Router DOM](https://reactrouter.com/) 7.14.0
+- **Animações**: [Framer Motion](https://www.framer.com/motion/) 12.38.0
+- **Ícones**: [FontAwesome](https://fontawesome.com/) 7.2.0
+- **Transições de Página**: [Swup](https://swup.js.org/) 4.8.3
+- **Build Tool**: [Create React App](https://create-react-app.dev/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Como Começar
 
-### `npm run build`
+### Pré-requisitos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (versão 14 ou superior)
+- npm ou yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone o repositório:
+```bash
+git clone https://github.com/carloshenrique54/Atlas.git
+cd Atlas
+```
 
-### `npm run eject`
+2. Instale as dependências:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Scripts Disponíveis
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### `npm start`
+Executa a aplicação em modo de desenvolvimento.
+- Abra [http://localhost:3000](http://localhost:3000) no navegador para visualizar
+- A página recarregará automaticamente quando você fizer alterações
+- Erros de lint aparecerão no console
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### `npm test`
+Executa os testes em modo interativo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### `npm run build`
+Compila a aplicação para produção na pasta `build`
+- A compilação é otimizada e os nomes dos arquivos incluem hashes
+- A aplicação está pronta para ser implantada
 
-## Learn More
+#### `npm run eject`
+⚠️ **Nota: esta é uma operação irreversível!**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Remove a camada de abstração do Create React App e expõe todas as configurações. Use apenas se precisar de controle total sobre as configurações.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📁 Estrutura do Projeto
 
-### Code Splitting
+```
+Atlas/
+├── public/          # Arquivos estáticos
+├── src/            # Código-fonte da aplicação
+├── package.json    # Dependências e scripts
+└── README.md       # Este arquivo
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📚 Saiba Mais
 
-### Analyzing the Bundle Size
+- [Documentação do React](https://reactjs.org/)
+- [Create React App Documentation](https://create-react-app.dev/)
+- [React Router Docs](https://reactrouter.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contribuições
 
-### Making a Progressive Web App
+Este é um projeto escolar. Contribuições são bem-vindas!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📝 Licença
 
-### Advanced Configuration
+Este projeto é de código aberto e está disponível para fins educacionais.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Desenvolvido com ❤️ para o curso técnico de Desenvolvimento de Sistemas - SENAI
