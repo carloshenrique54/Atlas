@@ -215,52 +215,52 @@ function Home(){
                 </div>
                 
 
-<div className="formulario">
-    <h3>Entre em contato</h3>
-    <p className="instrucao">Preencha os campos abaixo para que possamos ajudá-lo.</p>
+                <div className="formulario">
+                    <h3>Entre em contato</h3>
+                    <p className="instrucao">Preencha os campos abaixo para que possamos ajudá-lo.</p>
 
-    <form>
-        
-        <div className="row">
-            <input type="text" placeholder="Seu nome" required />
-            <input type="text" placeholder="Sobrenome" required />
-        </div>
+                    <form>
+                        
+                        <div className="row">
+                            <input type="text" placeholder="Seu nome" required />
+                            <input type="text" placeholder="Sobrenome" required />
+                        </div>
 
-        <input type="email" placeholder="Email" required />
+                        <input type="email" placeholder="Email" required />
 
-        <div className="row">
-            <div className="field-group">
-                <label>Categoria</label>
-                <select required>
-                    <option value="">Selecione</option>
-                    <option value="">Cadastrar Empresa</option>
-                    <option value="suporte">Suporte Técnico</option>
-                    <option value="financeiro">Financeiro</option>
-                    <option value="sugestao">Sugestão</option>
-                </select>
-            </div>
-            <div className="field-group">
-                <label>Assunto</label>
-                <input type="text" placeholder="Seu problema resumido" required />
-            </div>
-        </div>
+                        <div className="row">
+                            <div className="field-group">
+                                <label>Categoria</label>
+                                <select required>
+                                    <option value="">Selecione</option>
+                                    <option value="">Cadastrar Empresa</option>
+                                    <option value="suporte">Suporte Técnico</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="sugestao">Sugestão</option>
+                                </select>
+                            </div>
+                            <div className="field-group">
+                                <label>Assunto</label>
+                                <input type="text" placeholder="Seu problema resumido" required />
+                            </div>
+                        </div>
 
-        <div className="field-group">
-            <label>Descrição</label>
-            <textarea 
-                placeholder="Nos de uma descrição mais elaborada do problema ou elabore sua sugestão ou motivo de entrar em contato!" 
-                required
-            ></textarea>
-        </div>
+                        <div className="field-group">
+                            <label>Descrição</label>
+                            <textarea 
+                                placeholder="Nos de uma descrição mais elaborada do problema ou elabore sua sugestão ou motivo de entrar em contato!" 
+                                required
+                            ></textarea>
+                        </div>
 
-        <button type="submit">
-            <span className="icon-send">➤</span> Enviar
-        </button>
-    </form>
-</div>
-            </section>
-        </div>
-    )
+                        <button type="submit">
+                            <span className="icon-send">➤</span> Enviar
+                        </button>
+                    </form>
+                </div>
+                            </section>
+                        </div>
+                    )
 }
 
 export default Home;
