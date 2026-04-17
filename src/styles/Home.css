@@ -238,6 +238,7 @@ h4{
     display: flex;
     justify-content: center;
     background-color: #080B2A;
+    transition: ease 0.3s;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -263,6 +264,10 @@ h4{
     font-size: 25px;
     display: flex;
     flex-direction: row;
+}
+
+.cardP a:hover{
+    transform: scale(1.05, 1.05);
 }
 
 #planos h3{

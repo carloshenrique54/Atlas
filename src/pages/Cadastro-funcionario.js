@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Swup from 'swup';
+const swup = new Swup();
 
 function CadastroFuncionario(){
     return(

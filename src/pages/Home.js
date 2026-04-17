@@ -258,8 +258,8 @@ function Home(){
                         </button>
                     </form>
                 </div>
-                            </section>
-                        </div>
+            </section>
+        </div>
                     )
 }
 

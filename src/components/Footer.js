@@ -1,14 +1,14 @@
 function Footer(){
     return(
         <footer>
-            <div class="footer-container">
+            <div className="footer-container">
             
-            <div class="footer-section">
+            <div className="footer-section">
                 <h2>Atlas</h2>
                 <p>Plataforma de gestão de equipes e projetos. Organize tarefas, acompanhe o progresso e colabore com eficiência</p>
             </div>
 
-            <div class="footer-section">
+            <div className="footer-section">
                 <h3>Links</h3>
                 <ul>
                     <li><a href="/#inicio">Início</a></li>
@@ -18,7 +18,7 @@ function Footer(){
                 </ul>
             </div>
 
-                <div class="footer-section">
+                <div className="footer-section">
                     <h3>Contato</h3>
                     <p>Email: contatoAtlas@gmail.com</p>
                     <p>Telefone: (12) 99646-7015</p>
@@ -26,7 +26,7 @@ function Footer(){
 
             </div>
 
-            <div class="footer-bottom">
+            <div className="footer-bottom">
                 <p>© 2026 Atlas. Todos os direitos reservados.</p>
             </div>
         </footer>
