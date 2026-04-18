@@ -47,4 +47,13 @@ a{
     color: #080B2A;
     font-size: 18px;
     font-weight: 600;
+    background-color: transparent;
+    border: none;
+    transition: ease 0.3s;
+}
+
+.login:hover{
+    color: #3647ff;
+    background-color: transparent;
+    transform: scale(1.1, 1.1);
 }

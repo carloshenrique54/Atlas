@@ -34,7 +34,7 @@ main form{
     transition: ease 0.3s;
 }
 
-button{
+.informacoesPagamento button{
     display: flex;
     align-items: center;
     margin-top: 15px;

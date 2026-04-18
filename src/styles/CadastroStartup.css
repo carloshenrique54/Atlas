@@ -34,8 +34,18 @@ main img{
 
 .links a{
     color: #3647ff;
+    background-color: transparent;
     font-weight: 500;
     text-decoration: underline;
+}
+
+button.linkLogin {
+    color: #3647ff;
+    background-color: transparent;
+    font-weight: 500;
+    text-decoration: underline;
+    border: none;
+    transition: ease 0.3s;
 }
 
 .cadastroForms label{
@@ -63,7 +73,7 @@ main img{
     
 }
 
-.cadastroForms button{
+.cadastroForms .Cadastrar{
     display: flex;
     align-items: center;
     margin-top: 15px;

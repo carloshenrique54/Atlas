@@ -8,38 +8,69 @@ main img{
 }
 
 .loginForms{
-    display: flex;
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: fixed;
+    backdrop-filter: blur(10px);
 }
 
 .loginForms .links{
     display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    justify-content: center;
-    gap: 120px;
-    margin-top: 10px;
+    margin: 10px;
+    font-size: 18px;
 }
 
-.links a{
+.loginForms .links a{
+    color: #3647ff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+.loginForms .links a:hover{
     color: #3647ff;
     font-weight: 500;
     text-decoration: underline;
+    transform: scale(1.1, 1.1);
 }
 
 .loginForms form{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     justify-content: center;
-    width: 80%;
+    width: 30%;
     align-self: center;
+    margin-bottom: 300px;
+    border: 3px solid rgba(0, 0, 0, 0.080);
+    border-radius: 15px;
+    background-color: white;
 }
+
+.tituloLogin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tituloLogin h2{
+    color: #080B2A;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.tituloLogin svg{
+    color: #080B2A;
+    font-size: 30px;
+    cursor: pointer;
+}   
 
 label{
     color: #080B2A;
@@ -58,7 +89,23 @@ label{
     transition: ease 0.3s;
 }
 
-button{
+.loginForms form input:focus{
+    border: solid 3px #3647ff;
+}
+
+.fecharModal{
+    background-color: transparent;
+    border: none;
+    transition: ease 0.3s;
+}
+
+.fecharModal:hover{
+    color: #ffffff;
+    background-color: transparent;
+    transform: scale(1.1, 1.1);
+}
+
+.loginForms form .logar{
     display: flex;
     align-items: center;
     margin-top: 15px;
@@ -70,6 +117,8 @@ button{
     border: none;
     border-radius: 10px;
     font-size: 20px;
+    transition: ease 0.3s;
+    margin-bottom: 15px;
 }
 
 input:focus{

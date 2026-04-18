@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import abrirModal from '../functions/abrirModal';
 
 function Header(){
     return(
@@ -13,7 +13,7 @@ function Header(){
           <a href='/#contato'>Contato</a>
         </nav>
         <nav>
-          <Link className='login' to='/login'>Entrar</Link>
+          <button className='login' onClick={abrirModal}>Entrar</button>
           <a className='cadastro' href='/#planos'>Começar Agora</a>
         </nav>
       </header>

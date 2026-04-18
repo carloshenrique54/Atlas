@@ -13,7 +13,6 @@ import './styles/Pagamento.css'
 import './styles/Splash.css'
 
 import Home from './pages/Home';
-import Login from './pages/Login';
 import Pagamento from './pages/Pagamento';
 import CadastroFuncionario from './pages/Cadastro-funcionario';
 import CadastroStartup from './pages/Cadastrostartup';
@@ -32,7 +31,6 @@ function AnimatedRoutes() {
         key={routerLocation.pathname}
       >
         <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
         <Route path='/cadastrostartup' element={<CadastroStartup />} />
         <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/cadastrofuncionario' element={<CadastroFuncionario />} />
@@ -66,7 +64,8 @@ function App() {
 
       <AnimatedRoutes />
 
-      <Footer />
+      {window.location.pathname === '/cadastrostartup' || window.location.pathname === "/cadastrofuncionario" ? null : <Footer />}
+
     </BrowserRouter>
   );
 }
