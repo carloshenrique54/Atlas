@@ -9,6 +9,7 @@
 #cadastroFuncForms form{
     display: flex;
     flex-direction: column;
+    width: 75%;
     gap: 5px;
 }
 
@@ -26,10 +27,35 @@
 
 #numbersCadastro{
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+}
+
+.Cadastrar{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: center;
+    width: 100%;
+    background-color: #080B2A;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: ease 0.3s;
+}
+
+.Cadastrar:hover{
+    background-color: #080B2A;
+    transform: scale(1.05, 1.05);
 }
 
 #cadastroFuncForms .inputNumber{
     display: flex;
     flex-direction: column;
+    width: 45%;
+}
+
+.imagemCadastro {
+    width: 42.3%;
 }

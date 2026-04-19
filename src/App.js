@@ -23,6 +23,7 @@ import Splash from './components/Splash';
 
 function AnimatedRoutes() {
   const routerLocation = useLocation();
+  
 
   return (
     <AnimatePresence mode="wait">
@@ -38,7 +39,6 @@ function AnimatedRoutes() {
     </AnimatePresence>
   );
 }
-
 
 function App() {
   const [showSplash, setShowSplash] = useState(false);
@@ -58,13 +58,14 @@ function App() {
 
   if (showSplash) return <Splash />;
 
+
   return (
     <BrowserRouter>
       <Header />
 
       <AnimatedRoutes />
 
-      {window.location.pathname === '/cadastrostartup' || window.location.pathname === "/cadastrofuncionario" ? null : <Footer />}
+      {window.location.pathname === "/cadastrofuncionatio" || "/cadastrostartup" ? null : <Footer />}
 
     </BrowserRouter>
   );

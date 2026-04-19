@@ -27,7 +27,7 @@ function Footer(){
             </div>
 
             <div className="footer-bottom">
-                <p>© 2026 Atlas. Todos os direitos reservados.</p>
+                <p>© {new Date().getFullYear()} Atlas. Todos os direitos reservados.</p>
             </div>
         </footer>
     )

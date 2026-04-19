@@ -24,6 +24,14 @@ nav{
 a{
     text-decoration: none;
     color: #080B2A;
+    transition: ease 0.6s;
+    font-weight: 500;
+}
+
+a:hover{
+    color: #3647ff;
+    text-shadow: 0px 0px 1px rgba(54, 71, 255, 0.217);
+    transform: scale(1.03, 1.03);
 }
 
 .cadastro{

@@ -85,6 +85,7 @@ button.linkLogin {
     border: none;
     border-radius: 10px;
     font-size: 20px;
+    transition: ease 0.3s;
 }
 
 input:focus{

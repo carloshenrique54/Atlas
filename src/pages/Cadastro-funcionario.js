@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import Swup from 'swup';
-const swup = new Swup();
 
 function CadastroFuncionario(){
     return(
         <main>
-            <img src="/imagens/forms.png" alt="Imagem de cadastro"/>
+            <img className="imagemCadastro" src="/imagens/forms.png" alt="Imagem de cadastro" />
             <div id="cadastroFuncForms">
                 <form>
                     <label>Código da empresa:</label>
@@ -21,14 +19,14 @@ function CadastroFuncionario(){
                     <div id="numbersCadastro">
                         <div className="inputNumber">
                             <label>Telefone:</label>
-                            <input required type="text" placeholder="99 9999-9999"></input>
+                            <input required type="text" placeholder="(11) 1234-5678"></input>
                         </div>
                         <div className="inputNumber">
                             <label>CPF:</label>
                             <input required type="text" placeholder="Apenas números"></input>
                         </div>
                     </div>
-                    <button>Cadastrar</button>
+                    <button className="Cadastrar">Fazer cadastro</button>
                     <div className="links">
                         <Link to={"/Cadastrostartup"}>Cadastrar Empresa</Link>
                         <p>Ja tem uma conta? <Link to={"/login"}>Faça Login</Link></p>

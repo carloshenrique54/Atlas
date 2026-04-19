@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import fecharModal from '../functions/fecharModal';
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBuilding, faUser, faUserGroup, faDollarSign, faCheckSquare, faCircleXmark, faChartLine, faLayerGroup, faBolt, faShieldHalved, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faDesktop, faCircleCheck, faBuilding, faUser, faUserGroup, faDollarSign, faCheckSquare, faCircleXmark, faChartLine, faLayerGroup, faBolt, faShieldHalved, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from "react-router-dom";
 
 function Home(){
@@ -149,29 +149,32 @@ function Home(){
             <section id="sobre">
                 <h4>SOBRE</h4>
                 <h3>Saiba mais sobre nossa aplicação</h3>
-                <p>O Atlas é uma plataforma que centraliza a gestão de empresas, equipes e projetos em um só lugar, trazendo mais organização e controle para o dia a dia.</p>
+                <p className='sobreP'>O Atlas é uma plataforma que centraliza a gestão de empresas, equipes e projetos em um só lugar, trazendo mais organização e controle para o dia a dia.</p>
 
                 <div className="sobre-container">
                     <div className="cardS">
                         <h3>Simples</h3>
-                        <p>Fácil de usar, sem complicação.</p>
+                        <p className='cardSp'>Fácil de usar, com interface intuitiva e curva de aprendizado pequena.</p>
+                        <FontAwesomeIcon className='sobreIcon' icon={faDesktop} />
                     </div>
 
                     <div className="cardS">
                         <h3>Completo</h3>
-                        <p>Projetos, equipes e tarefas no mesmo sistema.</p>
+                        <p className='cardSp'>Projetos, equipes e tarefas em um mesmo sistema.</p>
+                        <FontAwesomeIcon className='sobreIcon' icon={faCircleCheck} />   
                     </div>
 
                     <div className="cardS">
                         <h3>Eficiente</h3>
-                        <p>Mais produtividade e organização.</p>
+                        <p className='cardSp'>Aumente sua produtividade com o máximo de organização.</p>
+                        <FontAwesomeIcon className='sobreIcon' icon={faBolt} />
                     </div>
                 </div>
             </section>
             <section id="contato">
                 <h4>CONTATO</h4>
                 <h3>Tem alguma dúvida? Nos conte!</h3>
-                <p>Perguntas Frequentes</p>
+                <p className='faq-titulo'>Perguntas Frequentes</p>
 
 
                 <div className="faq-container">

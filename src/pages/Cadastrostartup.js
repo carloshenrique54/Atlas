@@ -26,7 +26,7 @@ function Cadastro(){
             </form> 
         </div>
         <main>
-            <img src="/imagens/forms.png" alt="imagem do atlas"/>
+            <img className="imagemCadastro" src="/imagens/forms.png" alt="imagem do atlas"/>
             <div className="cadastroForms">
                 <form>
                     <div className='gridBox'>
@@ -48,7 +48,7 @@ function Cadastro(){
 
                         <div className='inputBox'>
                             <label>Telefone:</label>
-                            <input required type="text" placeholder="99 9999-9999"></input>
+                            <input required type="text" placeholder="(11) 1234-5678"></input>
                         </div>
                         
                         <div className='inputBox'>

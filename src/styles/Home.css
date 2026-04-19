@@ -111,6 +111,14 @@ h4{
     color: #080B2A;
 }
 
+#funcionalidades h3, #planos h3, #contato h3{
+    color: white;
+}
+
+#contato .formulario h3{
+    color: #080B2A;
+}
+
 .func-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -131,6 +139,7 @@ h4{
 
 .cardF:hover{
     scale: calc(1.05);
+    box-shadow: 0px 0px 15px #ffffff9a;
 }
 
 .funcIcon{
@@ -153,6 +162,8 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px;
+    padding-top: 0;
 }
 
 .bene-container{
@@ -297,13 +308,8 @@ h4{
     grid-template-columns: repeat(3, 1fr);
 }
 
-#sobre p{
+.sobreP{
     font-size: 20px;
-}
-
-#contato p{
-    font-size: 18px;
-    font-weight: 600;
 }
 
 #contato{
@@ -375,10 +381,11 @@ h4{
 
 .cardC.active{
     border-color: #000966;
+    box-shadow: 0px 0px 15px rgba(143, 153, 255, 0.338)
 }
 
 .cardC.active h5 {
-    color: #000966;
+    color: #3647ff;
 }
 
 .formulario {
@@ -390,6 +397,7 @@ h4{
     border: 3px solid rgba(0, 0, 0, 0.08); 
     font-family: inherit;
     box-sizing: border-box;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.317);
 }
 
 .formulario *, .formulario *::before, .formulario *::after {
@@ -555,6 +563,10 @@ h4{
     align-items: center;
 }
 
+#funcionalidades, #planos, #contato {
+    background-color: #181a34;
+}
+
 #sobre h3:first-of-type {
     color: #0f172a; 
     font-size: 2.2rem;
@@ -562,9 +574,9 @@ h4{
     margin-bottom: 15px;
 }
 
-#sobre p {
+.sobreP {
     color: #475569;
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
     text-align: center;
@@ -578,9 +590,16 @@ h4{
     max-width: 1200px;
 }
 
+.faq-titulo{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
 .cardS {
     background: #ffffff;
-    border: 1px solid #e2e8f0; 
+    border: 3px solid #00000014; 
     border-radius: 12px;
     padding: 30px;
     flex: 1;
@@ -588,10 +607,20 @@ h4{
     max-width: 350px;
     text-align: left; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardS .sobreIcon {
+    font-size: 40px;
+    color: #3647ff;
+    margin-top: 0;
 }
 
 .cardS:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05, 1.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
@@ -602,12 +631,12 @@ h4{
     font-weight: 700;
 }
 
-.cardS p {
+.cardSp {
     color: #64748b;
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0;
     text-align: center;
-    }
-
-    
+    margin-bottom: 20px;
+    font-size: 18px;
+}
