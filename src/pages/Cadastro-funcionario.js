@@ -28,8 +28,7 @@ function CadastroFuncionario(){
                     </div>
                     <button className="Cadastrar">Fazer cadastro</button>
                     <div className="links">
-                        <Link to={"/Cadastrostartup"}>Cadastrar Empresa</Link>
-                        <p>Ja tem uma conta? <Link to={"/login"}>Faça Login</Link></p>
+                        <Link to={"/cadastrostartup"}>Cadastrar Empresa</Link>
                     </div>
                 </form>
             </div>

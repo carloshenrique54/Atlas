@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
@@ -21,9 +21,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Splash from './components/Splash';
 
-function AnimatedRoutes() {
+export function AnimatedRoutes() {
   const routerLocation = useLocation();
-  
 
   return (
     <AnimatePresence mode="wait">
@@ -43,6 +42,17 @@ function AnimatedRoutes() {
 function App() {
   const [showSplash, setShowSplash] = useState(false);
 
+  const location = useLocation()
+
+  let mostrarFooter = true
+
+  if (location.pathname === "/cadastrofuncionario" || location.pathname === "/cadastrostartup"){
+    mostrarFooter = false
+  }
+  else{
+    mostrarFooter = true
+  }
+
   useEffect(() => {
     const seen = localStorage.getItem("seenSplash");
 
@@ -60,14 +70,13 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <>
       <Header />
 
       <AnimatedRoutes />
 
-      {window.location.pathname === "/cadastrofuncionatio" || "/cadastrostartup" ? null : <Footer />}
-
-    </BrowserRouter>
+      {mostrarFooter && <Footer />}
+    </>
   );
 }
 

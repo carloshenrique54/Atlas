@@ -29,7 +29,7 @@ a{
 }
 
 a:hover{
-    color: #3647ff;
+    color: #080B2A;
     text-shadow: 0px 0px 1px rgba(54, 71, 255, 0.217);
     transform: scale(1.03, 1.03);
 }
@@ -45,6 +45,7 @@ a:hover{
 
 .cadastro:hover{
     background-color: #080b2ae8;
+    color: white;
 }
 
 .cadastro:active{
@@ -61,7 +62,7 @@ a:hover{
 }
 
 .login:hover{
-    color: #3647ff;
+    color: #080B2A;
     background-color: transparent;
     transform: scale(1.1, 1.1);
 }

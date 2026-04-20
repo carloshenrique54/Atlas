@@ -1,7 +1,12 @@
-import abrirModal from '../functions/abrirModal';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 function Header(){
+  const [abrirModal, setAbrirModal] = useState(false)
+
     return(
+      <>
       <header>
         <h1>Atlas</h1>
         <nav>
@@ -13,10 +18,28 @@ function Header(){
           <a href='/#contato'>Contato</a>
         </nav>
         <nav>
-          <button className='login' onClick={abrirModal}>Entrar</button>
+          <button className='login' onClick={() => setAbrirModal(true)}>Entrar</button>
           <a className='cadastro' href='/#planos'>Começar Agora</a>
         </nav>
       </header>
+      <div className={abrirModal ? "loginForms active" : "loginForms"}>
+        <form>
+            <div className="tituloLogin">
+                <h2>Fazer Login</h2>
+                <button className='fecharModal' onClick={() => setAbrirModal(false)}><FontAwesomeIcon icon={faCircleXmark} /></button>
+            </div>
+            <label>E-mail:</label>
+            <input required type="email" placeholder="exemplo@gmail.com"></input>
+            <label>Senha:</label>
+            <input required type="password" placeholder="Insira sua senha"></input>
+            <button className='logar'>Fazer Login</button>
+            <div className="links">
+                <a onClick={() => setAbrirModal(false)} href="#">Esqueceu sua senha?</a>
+                <a onClick={() => setAbrirModal(false)} href="/#planos">Conheça nossos planos!</a>
+            </div>
+        </form> 
+    </div>
+        </>
     )
 }
 

@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { supabase } from "../services/supabase";
 
 function Pagamento(){
 
+
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [telefone, setTelefone] = useState("");
+    const [cartao, setCartao] = useState("");
     const [cep, setCep] = useState("");
     const [rua, setRua] = useState("");
     const [bairro, setBairro] = useState("");
@@ -36,22 +43,34 @@ function Pagamento(){
         setMet(event.target.value)
     }
 
-    function realizarPagamento(){
+    const mudarCartao = (e) => {
+        let input = e.target.value.replace(/\D/g, '');
         
+        const formattedValue = input.replace(/(.{4})/g, '$1 ').trim();
+        
+        setCartao(formattedValue);
+    }
+
+    const mudarTelefone = (e) => {
+        let input = e.target.value.replace(/\D/g, '');
+        
+        const formattedValue = input.replace(/^(\d{2})(\d)/g, '($1) $2').replace(/(\d)(\d{4})$/, '$1-$2');
+        
+        setTelefone(formattedValue);
     }
 
     function renderMetodo(){
         switch(metodo){
             case "pix":
                 return(<div className="pix">
-                        <img src="./imagens/Pixqrcode.png"/>
+                        <img alt="Qrcode do pagamento" src="./imagens/Pixqrcode.png"/>
                         <p> {codigoPix} <FontAwesomeIcon onClick={copiarPix} className="iconeCopia" icon={faCopy} /></p>
                         <button>Realizar Pagamento</button>
                     </div>
                 )
             case "cartao":
                 return(<div className="cartao">
-                    <input type="text" placeholder="Número do cartão" />
+                    <input onChange={mudarCartao} value ={cartao} maxLength={19} type="text" placeholder="Número do cartão" />
                     <input type="text" placeholder="Nome no cartão" />
                     <input type="text" placeholder="MM/AA" />
                     <input type="text" placeholder="CVV" />
@@ -64,6 +83,8 @@ function Pagamento(){
                         </p>
                         <button>Gerar Boleto</button>
                     </div>)
+            default:
+                return(<p>Selecione um método</p>)
         }
     }
 
@@ -79,18 +100,20 @@ function Pagamento(){
                     <div className="informacoesPessoais">
                         <h2>Informações Pessoais</h2>
                         <label>Nome:</label>
-                        <input required type="text" placeholder="Nome completo"></input>
+                        <input value={nome} required type="text" placeholder="Nome completo"></input>
                         <label>E-mail:</label>
-                        <input required type="text" placeholder="exemplo@gmail.com"></input>
+                        <input value={email} required type="text" placeholder="exemplo@gmail.com"></input>
                         <label>CPF:</label>
-                        <input required type="text" placeholder="Apenas números"></input>
+                        <input value={cpf} required type="text" placeholder="Apenas números"></input>
                         <label>Telefone:</label>
-                        <input required type="tel" placeholder="99 9999-9999"></input>
+                        <input maxLength={14} onChange={mudarTelefone} value={telefone} required type="tel" placeholder="(11) 1234-5678"></input>
                     <div className="endereco">
                         <div className="enderecoInput">
                             <label>CEP:</label>
                             <input 
                                 value={cep} 
+                                format="###.###.###-##"
+                                mask="_"
                                 onChange={(e) => setCep(e.target.value.replace(/\D/g, ''))}required 
                                 type="text" 
                                 placeholder="Apenas números"
@@ -100,7 +123,7 @@ function Pagamento(){
                         </div>
                         <div className="enderecoInput">
                             <label>Numero:</label>
-                            <input maxLength={3} required type="text"></input>
+                            <input placeholder="Ex: 123" maxLength={3} required type="text"></input>
                         </div>
                         <div className="enderecoInput">
                             <label>Rua:</label>

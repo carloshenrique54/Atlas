@@ -28,15 +28,19 @@ main img{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 90px;
+    width: 100%;
 }
 
 .links a{
-    color: #3647ff;
+    color: #ffffff;
     background-color: transparent;
     font-weight: 500;
-    text-decoration: underline;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #080B2A;
 }
 
 button.linkLogin {

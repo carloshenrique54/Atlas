@@ -13,6 +13,13 @@
     gap: 5px;
 }
 
+#cadastroFuncForms form .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
 #cadastroFuncForms input{
     padding: 15px;
     border-radius: 10px;
@@ -55,7 +62,6 @@
     flex-direction: column;
     width: 45%;
 }
-
 .imagemCadastro {
     width: 42.3%;
 }

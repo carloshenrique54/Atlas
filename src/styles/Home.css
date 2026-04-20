@@ -93,6 +93,10 @@ h4{
     letter-spacing: 2px;
 }
 
+#funcionalidades h4, #planos h4, #contato h4{
+    color: #7580ff;
+} 
+
 #funcionalidades{
     background-color: #e9f8ff;
     border-top: solid 3px rgb(0, 0, 0, 0.08);
@@ -279,6 +283,7 @@ h4{
 
 .cardP a:hover{
     transform: scale(1.05, 1.05);
+    color: white;
 }
 
 #planos h3{
@@ -564,7 +569,11 @@ h4{
 }
 
 #funcionalidades, #planos, #contato {
-    background-color: #181a34;
+    background-image: linear-gradient(to bottom, #181a34, #14173f)
+}
+
+#funcionalidades{
+    padding-bottom: 30px;
 }
 
 #sobre h3:first-of-type {

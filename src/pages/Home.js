@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
-import fecharModal from '../functions/fecharModal';
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDesktop, faCircleCheck, faBuilding, faUser, faUserGroup, faDollarSign, faCheckSquare, faCircleXmark, faChartLine, faLayerGroup, faBolt, faShieldHalved, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faDesktop, faCircleCheck, faBuilding, faUser, faUserGroup, faDollarSign, faCheckSquare, faChartLine, faLayerGroup, faBolt, faShieldHalved, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from "react-router-dom";
 
 function Home(){
@@ -24,23 +23,6 @@ function Home(){
 
     return(
         <>
-        <div className="loginForms">
-            <form>
-                <div className="tituloLogin">
-                    <h2>Fazer Login</h2>
-                    <button className='fecharModal' onClick={fecharModal}><FontAwesomeIcon icon={faCircleXmark} /></button>
-                </div>
-                <label>E-mail:</label>
-                <input required type="email" placeholder="exemplo@gmail.com"></input>
-                <label>Senha:</label>
-                <input required type="password" placeholder="Insira sua senha"></input>
-                <button className='logar'>Fazer Login</button>
-                <div className="links">
-                    <a href="#">Esqueceu sua senha?</a>
-                    <a href="/#planos">Conheça nossos planos!</a>
-                </div>
-            </form> 
-        </div>
         <div className="home">
             <section id="inicio">
                 <div id='inicio-texto'>

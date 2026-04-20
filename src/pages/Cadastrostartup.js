@@ -1,30 +1,8 @@
 import { Link } from 'react-router-dom'
-import abrirModal from '../functions/abrirModal';
-import fecharModal from '../functions/fecharModal';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 function Cadastro(){
     return(
         <>
-        <div className="loginForms">
-            <form>
-                <div className="tituloLogin">
-                    <h2>Fazer Login</h2>
-                    <button className='fecharModal' onClick={fecharModal}><FontAwesomeIcon icon={faCircleXmark} /></button>
-                </div>
-                <label>E-mail:</label>
-                <input required type="email" placeholder="exemplo@gmail.com"></input>
-                <label>Senha:</label>
-                <input required type="password" placeholder="Insira sua senha"></input>
-                <button className='logar'>Fazer Login</button>
-                <div className="links">
-                    <a href="#">Esqueceu sua senha?</a>
-                    <a href="/#planos">Conheça nossos planos!</a>
-                </div>
-            </form> 
-        </div>
         <main>
             <img className="imagemCadastro" src="/imagens/forms.png" alt="imagem do atlas"/>
             <div className="cadastroForms">
@@ -73,7 +51,6 @@ function Cadastro(){
                     </div>
                     <button className='Cadastrar'>Fazer cadastro</button>
                     <div className="links">
-                        <button className='linkLogin' onClick={abrirModal}>Ja tem uma conta? Faça login</button>
                         <Link to="/cadastrofuncionario">Cadastrar como funcionario</Link>
                     </div>
                 </form>
