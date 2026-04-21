@@ -46,7 +46,7 @@ function App() {
 
   let mostrarFooter = true
 
-  if (location.pathname === "/cadastrofuncionario" || location.pathname === "/cadastrostartup"){
+  if (location.pathname === "/cadastrofuncionario" || location.pathname === "/cadastrostartup" || location.pathname === "/pagamento") {
     mostrarFooter = false
   }
   else{

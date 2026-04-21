@@ -6,6 +6,7 @@ main{
 main form{
     display: flex;
     gap: 50px;
+    margin-top: 50px;
     width: 100%;
 }
 
@@ -129,17 +130,17 @@ button:hover{
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    
     background: #64ff71;
     color: white;
-    
     padding: 12px 20px;
     border-radius: 8px;
-    
     font-weight: bold;
     z-index: 9999;
-
     animation: slideDown 0.4s ease;
+}
+
+.qrCode{
+    width: 45%;
 }
 
 @keyframes slideDown {
@@ -182,4 +183,25 @@ button:hover{
 
 .desativados{
     background-color: rgba(0, 0, 0, 0.067);
+}
+
+.modalAviso{
+    display: flex;;
+    color: black;
+    margin-top: 3.0%;
+    width: 100%;
+    color: rgb(80, 0, 0);
+    position: absolute;
+    transform: translateY(-100px);
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: rgb(255, 167, 167);
+    z-index: 999;
+    transition: ease 0.5s;
+}
+
+.modalAviso.ativo{
+    transform: translateY(0);
 }
