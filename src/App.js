@@ -16,6 +16,7 @@ import Home from './pages/Home';
 import Pagamento from './pages/Pagamento';
 import CadastroFuncionario from './pages/Cadastro-funcionario';
 import CadastroStartup from './pages/Cadastrostartup';
+import CadastroEmpresa from './pages/CadastroEmpresa';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -34,6 +35,7 @@ export function AnimatedRoutes() {
         <Route path='/cadastrostartup' element={<CadastroStartup />} />
         <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/cadastrofuncionario' element={<CadastroFuncionario />} />
+        <Route path='/cadastroempresa' element={<CadastroEmpresa />} />
       </Routes>
     </AnimatePresence>
   );
@@ -46,7 +48,7 @@ function App() {
 
   let mostrarFooter = true
 
-  if (location.pathname === "/cadastrofuncionario" || location.pathname === "/cadastrostartup" || location.pathname === "/pagamento") {
+  if (location.pathname === "/cadastrofuncionario" || location.pathname === "/cadastrostartup" || location.pathname === "/pagamento" || location.pathname === "/cadastroempresa") {
     mostrarFooter = false
   }
   else{

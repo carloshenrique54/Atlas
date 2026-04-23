@@ -22,14 +22,14 @@ main img{
     justify-content: center;
     align-items: center;
     width: 80%;
+    margin: 20px;
 }
 
 .links{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 90px;
+    justify-content: space-between;
     width: 100%;
 }
 
