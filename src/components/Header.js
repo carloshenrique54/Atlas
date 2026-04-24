@@ -8,7 +8,10 @@ function Header(){
     return(
       <>
       <header>
-        <h1>Atlas</h1>
+        <div className="headerTitulo">
+          <img className="logoHeader" src="/imagens/Logo Header.png" alt="Logo do Atlas"/>
+          <h1>Atlas</h1>
+        </div>
         <nav>
           <a href='/#inicio'>Início</a>
           <a href='/#funcionalidades'>Funcionalidades</a>

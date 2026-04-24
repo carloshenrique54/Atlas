@@ -26,6 +26,7 @@ function Pagamento(){
     const [alertModal, setAlertModal] = useState("");
     const [abrirToast, setAbrirToast] = useState(false);
     const [alertToast, setAlertToast] = useState("a");
+    const [numeroCasa, setNumeroCasa] = useState("")
 
     function gerarBoleto() {
         const doc = new jsPDF();
@@ -140,6 +141,7 @@ function Pagamento(){
         if (!telefone) {setAlertModal("Preencha o seu telefone"); setAbrirModal(true); await delay(2000); setAbrirModal(false);}
         if (!email) {setAlertModal("Preencha o seu e-mail"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if (cep.length < 8) {setAlertModal("Preencha o seu CEP"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
+        if (!numeroCasa) {setAlertModal("Preencha o numero de sua casa"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
 
         switch(metodo){
             case "pix": 
@@ -302,7 +304,7 @@ function Pagamento(){
                         </div>
                         <div className="enderecoInput">
                             <label>Numero:</label>
-                            <input placeholder="Ex: 123" maxLength={3} required type="text"></input>
+                            <input value={numeroCasa} onChange={e => setNumeroCasa(e.target.value)} placeholder="Ex: 123" maxLength={3} type="text"></input>
                         </div>
                         <div className="enderecoInput">
                             <label>Rua:</label>

@@ -119,6 +119,10 @@ h4{
     color: white;
 }
 
+#planos .cardP h3{
+    color: #080B2A;
+}
+
 #contato .formulario h3{
     color: #080B2A;
 }
@@ -134,26 +138,30 @@ h4{
 .cardF{
     display: flex;
     background-color: white;
-    padding: 25px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(76, 146, 193, 0.416);
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     border-radius: 25px;
-    border: 3px solid rgb(0, 0, 0, 0.080);
     transition: ease 0.3s;
 }
 
 .cardF:hover{
     scale: calc(1.05);
-    box-shadow: 0px 0px 15px #ffffff9a;
+    box-shadow: 0px 0px 15px #ffffff85;
 }
 
 .funcIcon{
-    font-size: 30px;
+    font-size: 40px;
     color: #3647ff;
-    margin-top: 25px;
+    margin-top: 8px;
 }
 
 .cardF h2{
-    margin-top: 35px;
+    margin-top: 25px;
+    margin-bottom: 10px;
     color: #080B2A;
 }
 

@@ -42,7 +42,7 @@ function Home(){
                     <div className='cardF'>
                         <FontAwesomeIcon className='funcIcon' icon={faUserGroup} />
                         <h2>Gestão de Clientes</h2>
-                        <p>Organize e acompanhe todos os seus clientes em um só lugar, com histórico completo.</p>
+                        <p>Organize e acompanhe todos os seus clientes em um só lugar.</p>
                     </div>
                     <div className='cardF'>
                         <FontAwesomeIcon className='funcIcon' icon={faDollarSign} />

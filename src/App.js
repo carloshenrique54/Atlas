@@ -17,6 +17,7 @@ import Pagamento from './pages/Pagamento';
 import CadastroFuncionario from './pages/Cadastro-funcionario';
 import CadastroStartup from './pages/Cadastrostartup';
 import CadastroEmpresa from './pages/CadastroEmpresa';
+import RedefinirSenha from './pages/RedefinirSenha';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -36,6 +37,7 @@ export function AnimatedRoutes() {
         <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/cadastrofuncionario' element={<CadastroFuncionario />} />
         <Route path='/cadastroempresa' element={<CadastroEmpresa />} />
+        <Route path='/redefinirsenha' element={<RedefinirSenha />} />
       </Routes>
     </AnimatePresence>
   );
