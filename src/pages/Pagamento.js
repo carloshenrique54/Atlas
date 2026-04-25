@@ -135,7 +135,7 @@ function Pagamento(){
     async function RealizarPagamento(e) {
         e.preventDefault();
         setCep(cep.replace(/\D/g, ''))
-        setCep(cpf.replace(/\D/g, ''))
+        setCpf(cpf.replace(/\D/g, ''))
         if (!nome) {setAlertModal("Preencha o seu nome"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if (cpf.length < 11) {setAlertModal("Preencha o seu CPF"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if (!telefone) {setAlertModal("Preencha o seu telefone"); setAbrirModal(true); await delay(2000); setAbrirModal(false);}

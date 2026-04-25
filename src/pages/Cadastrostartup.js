@@ -17,8 +17,26 @@ function Cadastro(){
     const [abrirToast, setAbrirToast] = useState(false)
     const [alertToast, setAlertToast] = useState(false)
 
+    const mudarCpf = (e) => {
+        let input = e.target.value.replace(/\D/g, '')
+
+        const formattedValue = input.replace(/^(\d{3})(\d{3})(\d{3})/g, '$1.$2.$3').replace(/(\d)(\d{2})$/, '$1-$2');
+
+        setCpf(formattedValue)
+    }
+
+    const mudarTelefone = (e) => {
+        let input = e.target.value.replace(/\D/g, '');
+        
+        const formattedValue = input.replace(/^(\d{2})(\d)/g, '($1) $2').replace(/(\d)(\d{4})$/, '$1-$2');
+        
+        setTelefone(formattedValue);
+    }
+
     async function FazerCadastro(e){
         e.preventDefault()
+        setTelefone(telefone.replace(/\D/g, ''))
+        setCpf(cpf.replace(/\D/g, ''))
 
         if (!nomeUsuario) {setAlertModal("Preencha o seu nome"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if (!nomeStartup) {setAlertModal("Preencha o nome da StartUp"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
@@ -30,19 +48,46 @@ function Cadastro(){
         if (senha.length < 8) {setAlertModal("Senha precisa ter no mínimo 8 caracteres"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if (senha !== senhaConfirmar) {setAlertModal("As senhas não coencidem"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
 
-        const {data: resposta, error} = await supabase
-        .from("pagamentos")
-        .select('usuario_cpf')
-        .eq('usuario_cpf', cpf)
-        .maybeSingle();
 
-        if (resposta){
-            console.log("Viadinho")
-        }
-        else{
-            console.log("Viadinho só q 2")
+        const{data: respostacpf, errorcpf} = await supabase
+        .from("usuarios")
+        .select("cpf")
+        .eq("cpf", cpf)
+        .maybeSingle()
+
+        if (respostacpf){
+            setAlertModal("Este cpf ja esta logado, caso não lembre sua senha clique em 'Redefinir Senha'")
+            setAbrirModal(true)
+            await delay(6000)
+            setAbrirModal(false)
             return
         }
+
+        if (errorcpf){
+            alert("Erro: " + errorcpf)
+            return
+        }
+
+        const{data: respostaemail, erroremail} = await supabase
+        .from("usuarios")
+        .select("email")
+        .eq("email", email)
+        .maybeSingle()
+
+        if (respostaemail){
+            setAlertModal("Este email ja esta logado, caso não lembre sua senha clique em 'Redefinir Senha'")
+            setAbrirModal(true)
+            await delay(6000)
+            setAbrirModal(false)
+            return
+        }
+
+        if (erroremail){
+            alert("Erro: " + erroremail)
+            return
+        }
+
+        console.log("Chego aqui porra")
 
         const {data: respostaStartup, errorStartup} = await supabase
         .from("startups")
@@ -54,6 +99,13 @@ function Cadastro(){
                 dono_email: email
             }
         ]);
+        
+        console.log(respostaStartup)
+
+        if (errorStartup){
+            alert("Erro: " + errorStartup)
+            return
+        }
 
         const {data: respostaUsuario, errorUsuario} = await supabase
         .from("usuarios")
@@ -66,6 +118,18 @@ function Cadastro(){
                 telefone: telefone
             }
         ]);
+        console.log(respostaUsuario)
+
+        if (errorUsuario){
+            alert("Erro: " + errorUsuario)
+            return
+        }
+
+        setAlertToast("Cadastro realizado com sucesso! Realize o login")
+        setAbrirToast(true)
+        await delay(5000)
+        setAbrirToast(false)
+        
     }
     return(
         <>
@@ -98,7 +162,7 @@ function Cadastro(){
 
                         <div className='inputBox'>
                             <label>Telefone:</label>
-                            <input onChange={(e) => setTelefone(e.target.value)} value={telefone} type="text" placeholder="(11) 1234-5678"></input>
+                            <input maxLength={14} onChange={mudarTelefone} value={telefone} type="text" placeholder="(11) 1234-5678"></input>
                         </div>
                         
                         <div className='inputBox'>
@@ -113,7 +177,7 @@ function Cadastro(){
 
                         <div className='inputBox'>
                             <label>CPF:</label>
-                            <input onChange={(e) => setCpf(e.target.value)} value={cpf} type="text" placeholder="Apenas números"></input>
+                            <input maxLength={14} onChange={mudarCpf} value={cpf} type="text" placeholder="Apenas números"></input>
                         </div>
 
                         <div className='inputBox'>

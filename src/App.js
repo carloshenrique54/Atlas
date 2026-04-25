@@ -2,7 +2,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-import './styles/App.css';
 import './styles/Header.css';
 import './styles/Footer.css';
 import './styles/Home.css'
@@ -11,6 +10,7 @@ import './styles/CadastroFuncionario.css'
 import './styles/Login.css'
 import './styles/Pagamento.css'
 import './styles/Splash.css'
+import './styles/App.css';
 
 import Home from './pages/Home';
 import Pagamento from './pages/Pagamento';
@@ -50,7 +50,7 @@ function App() {
 
   let mostrarFooter = true
 
-  if (location.pathname === "/cadastrofuncionario" || location.pathname === "/cadastrostartup" || location.pathname === "/pagamento" || location.pathname === "/cadastroempresa") {
+  if (location.pathname === "/cadastrofuncionario" || location.pathname === "/cadastrostartup" || location.pathname === "/pagamento" || location.pathname === "/cadastroempresa" || location.pathname === "/redefinirsenha") {
     mostrarFooter = false
   }
   else{

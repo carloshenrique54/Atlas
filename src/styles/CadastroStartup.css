@@ -34,19 +34,19 @@ main img{
 }
 
 .links a{
-    color: #ffffff;
+    color: #4e4e4e;
     background-color: transparent;
     font-weight: 400;
     padding: 10px;
     font-size: 18px;
     border-radius: 10px;
-    background-color: #080B2A;
     transition: ease 0.3s;
 }
 
 .links a:hover{
     transform: scale(1.01, 1.01);
     text-decoration: underline;
+    color: #3647ff;
 }
 
 button.linkLogin {
@@ -87,7 +87,7 @@ button.linkLogin {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #080B2A;
+    background-color: #2c39cc;
     color: white;
     padding: 15px;
     border: none;

@@ -1,3 +1,26 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fontes/InterFont.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('/public/fontes/OpenSansFont.ttf');
+}
+
 body{
     background-color: #FCFCFC;
+}
+
+h1{
+    font-family: 'Inter';
+    color: #080b2a;
+}
+
+h3, h2, h4, h5, h6, button, a, Link{
+    font-family: 'Inter';
+}
+
+p{
+    font-family: 'OpenSans'
 }

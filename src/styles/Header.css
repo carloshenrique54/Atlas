@@ -8,8 +8,8 @@ header{
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
     box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.050);
 }
 
@@ -51,7 +51,7 @@ a:hover{
 }
 
 .logoHeader{
-    width: 6%;
+    width: 670%;
     height: auto;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -60,7 +60,10 @@ a:hover{
 .headerTitulo{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: flex-start ;
     gap: 5px;
+    width: 10px;
 }
 
 .cadastro:active{

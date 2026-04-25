@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom'
 import { useState } from "react";
 
 function Header(){
@@ -37,8 +38,8 @@ function Header(){
             <input required type="password" placeholder="Insira sua senha"></input>
             <button className='logar'>Fazer Login</button>
             <div className="links">
-                <a onClick={() => setAbrirModal(false)} href="#">Esqueceu sua senha?</a>
-                <a onClick={() => setAbrirModal(false)} href="/#planos">Conheça nossos planos!</a>
+                <Link onClick={() => setAbrirModal(false)} to="/redefinirsenha">Esqueceu sua senha?</Link>
+                <Link onClick={() => setAbrirModal(false)} to="/cadastrostartup">Crie uma conta gratuita!</Link>
             </div>
         </form> 
     </div>
