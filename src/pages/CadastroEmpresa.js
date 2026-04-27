@@ -1,9 +1,10 @@
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link, Navigate } from "react-router-dom"
 import { supabase } from "../services/supabase.js"
 import { useState, useEffect } from "react";
 
 function CadastroEmpresa(){
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const navigate = useNavigate
     const [nomeEmpresa, setNomeEmpresa] = useState("")
     const [nomeUsuario, setNomeUsuario] = useState("")
     const [telefone, setTelefone] = useState("")
@@ -61,6 +62,21 @@ function CadastroEmpresa(){
         setCep(formattedValue)
     }
 
+    function mudarCnpj(e) {
+
+        let input = e.target.value.replace(/\D/g, '')
+
+        const formattedValue = input
+        .replace(/\D/g, "") 
+        .replace(/^(\d{2})(\d)/, "$1.$2") 
+        .replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
+        .replace(/\.(\d{3})(\d)/, ".$1/$2") 
+        .replace(/(\d{4})(\d)/, "$1-$2") 
+        .replace(/(-\d{2})\d+?$/, "$1");
+
+        setCnpj(formattedValue)
+}
+
 async function FazerCadastro(e) {
     e.preventDefault();
     setTelefone(telefone.replace(/\D/g, ''))
@@ -73,7 +89,7 @@ async function FazerCadastro(e) {
     if (!email) {setAlertModal("Preencha o seu e-mail"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
     if (!area) {setAlertModal("Coloque a sua área de atuação"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
     if (!senha) {setAlertModal("Preencha a sua senha"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
-    if (senha.length < 8) {setAlertModal("Senha precisa ter no mínimo 8 caracteres"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
+    if (senha.length < 8) {setAlertModal("A senha precisa ter no mínimo 8 caracteres"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
     if (senha !== senhaConfirmar) {setAlertModal("As senhas não coencidem"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
     if (!cepCerto){setAlertModal("Insira um cep valido"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
 
@@ -83,28 +99,84 @@ async function FazerCadastro(e) {
         .eq('usuario_cpf', cpf)
         .maybeSingle();
 
-        if (resposta){
-            console.log("Viadinho")
-        }
-        else{
-            console.log("Viadinho só q 2")
-            return
-        }
-    
-
-    const {data: resposta1, error1} = await supabase
-    .from("empresas")
-    .insert([
-        {
-
-        }
-    ]);
-    console.log(resposta1)
-    if (error1){
-        alert("Erro: " + error)
+    if (!resposta){
+        setAlertModal("Assine o plano Growth para ter acesso à este cadastro");
+        setAbrirModal(true)
+        await delay(4000)
+        setAbrirModal(false)
         return
     }
+
+    if (error){
+        alert("Erro:" + error)
+        return
+    }
+
+    const {data: respostaCpfUsuario, errorCpfUsuario} = await supabase
+        .from("usuarios")
+        .select("cpf")
+        .eq("cpf", cpf)
+        .maybeSingle();
+
+        if (!respostaCpfUsuario){
+            console.log("Nenhum usuario com este cpf")
+        }
+        else{
+            setAlertModal("CPF ja cadastrado, redefina sua senha caso não lembre");
+            setAbrirModal(true)
+            await delay(4000)
+            setAbrirModal(false)
+            return
+        }
+
+    const codigo = Math.floor(Math.random() * 100000)
+        .toString()
+        .padStart(5, '0');
+
     
+    const {data: respostaEmpresa, errorEmpresa} = await supabase
+        .from("empresas")
+        .insert([
+            {
+                nome: nomeEmpresa,
+                cnpj: cnpj,
+                cep: cep,
+                numerofuncionarios: 1,
+                dono_cpf: cpf,
+                dono_email: email,
+                areaatuacao: area,
+                codigoconvite: codigo
+            }
+        ]);
+
+    console.log(respostaEmpresa)
+    if (errorEmpresa){
+        alert("Erro: " + errorEmpresa)
+        return
+    }
+
+    const {data: respostaUsuario, errorUsuario} = await supabase
+    .from("usuarios")
+    .insert([
+        {
+            cpf: cpf,
+            nome: nomeUsuario,
+            email: email,
+            senha: senha,
+            telefone: telefone
+        }
+    ])
+    console.log(respostaUsuario)
+    if (errorUsuario){
+        alert("Erro: " + errorUsuario)
+        return
+    }
+
+    setAlertToast("Cadastro realizado com sucesso! Realize Login");
+    setAbrirToast(true)
+    await delay(4000)
+    setAbrirToast(false)
+    Navigate("http://localhost:5173/")
 }
 
     return(
@@ -123,7 +195,7 @@ async function FazerCadastro(e) {
 
                         <div className='inputBox'>
                             <label>Nome da Empresa:</label>
-                            <input value={nomeEmpresa} type="text" placeholder="Coloque o nome de sua Startup"></input>
+                            <input onChange={e => setNomeEmpresa(e.target.value)} value={nomeEmpresa} type="text" placeholder="Coloque o nome de sua Startup"></input>
                         </div>
 
                         <div className='inputBox'>
@@ -138,7 +210,7 @@ async function FazerCadastro(e) {
 
                         <div className='inputBox'>
                             <label>Telefone:</label>
-                            <input onChange={mudarTelefone} value={telefone} type="text" placeholder="(11) 1234-5678"></input>
+                            <input maxLength={14} onChange={mudarTelefone} value={telefone} type="text" placeholder="(11) 1234-5678"></input>
                         </div>
                         
                         <div className='inputBox'>
@@ -153,12 +225,12 @@ async function FazerCadastro(e) {
 
                         <div className='inputBox'>
                             <label>CPF:</label>
-                            <input onChange={mudarCep} value={cpf} type="text" placeholder="Apenas números"></input>
+                            <input maxLength={14} onChange={mudarCpf} value={cpf} type="text" placeholder="Apenas números"></input>
                         </div>
 
                         <div className='inputBox'>
                             <label>CNPJ:</label>
-                            <input onChange={e => setNomeUsuario(e.target.value)} value={cnpj} type="text" placeholder="Apenas números"></input>
+                            <input maxLength={18} onChange={mudarCnpj} value={cnpj} type="text" placeholder="Apenas números"></input>
                         </div>
 
                         <div className='inputBox'>

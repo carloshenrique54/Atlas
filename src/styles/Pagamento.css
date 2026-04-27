@@ -209,8 +209,10 @@ button:hover{
     background-color: rgb(255, 167, 167);
     z-index: 999;
     transition: ease 0.5s;
+    opacity: 0;
 }
 
 .modalAviso.ativo{
     transform: translateY(0);
+    opacity: 100%;
 }

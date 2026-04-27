@@ -33,7 +33,6 @@ main img{
 }
 
 .loginForms .links a{
-    color: white;
     font-weight: 400;
     text-decoration: none;
     transition: ease 0.3s;

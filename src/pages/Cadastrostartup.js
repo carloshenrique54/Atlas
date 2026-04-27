@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import { supabase } from '../services/supabase';
 
 function Cadastro(){
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const navigate = useNavigate()
     const [nomeStartup, setNomeStartup] = useState("")
     const [nomeUsuario, setNomeUsuario] = useState("")
     const [telefone, setTelefone] = useState("")
@@ -87,7 +88,9 @@ function Cadastro(){
             return
         }
 
-        console.log("Chego aqui porra")
+        const codigo = Math.floor(Math.random() * 100000)
+        .toString()
+        .padStart(5, "0")
 
         const {data: respostaStartup, errorStartup} = await supabase
         .from("startups")
@@ -96,7 +99,8 @@ function Cadastro(){
                 nome: nomeStartup,
                 areaatuacao: area,
                 dono_cpf: cpf,
-                dono_email: email
+                dono_email: email,
+                codigoconvite: codigo
             }
         ]);
         
@@ -129,6 +133,7 @@ function Cadastro(){
         setAbrirToast(true)
         await delay(5000)
         setAbrirToast(false)
+        navigate("http://localhost:5173/")
         
     }
     return(
