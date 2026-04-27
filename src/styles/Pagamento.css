@@ -40,7 +40,7 @@ main form{
     margin-top: 15px;
     justify-content: center;
     width: 100%;
-    background-color: #E7873D;
+    background-color: #ff7203;
     color: white;
     padding: 10px;
     border: 3px solid rgba(0, 0, 0, 0.080);
@@ -50,7 +50,7 @@ main form{
 }
 
 button:hover{
-    background-color: #e48f4d;
+    background-color: #d55c00;
     transform: scale(1.03, 1.03);
 }
 
