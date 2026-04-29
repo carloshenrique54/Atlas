@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import { supabase } from '../services/supabase';
 
@@ -56,35 +56,60 @@ function Cadastro(){
         .eq("cpf", cpf)
         .maybeSingle()
 
-        if (respostacpf){
-            setAlertModal("Este cpf ja esta logado, caso não lembre sua senha clique em 'Redefinir Senha'")
+        const {data: respostaCpf, errorCpf} = await supabase
+        .from("usuarios")
+        .select("cpf")
+        .eq("cpf", cpf)
+        .maybeSingle()
+
+        if(respostaCpf){
+            setAlertModal("Este CPF já esta cadastrado")
             setAbrirModal(true)
-            await delay(6000)
+            await delay(3000)
             setAbrirModal(false)
             return
         }
 
-        if (errorcpf){
-            alert("Erro: " + errorcpf)
+        const {data: respostaEmail, errorEmail} = await supabase
+        .from("usuarios")
+        .select("cpf")
+        .eq("email", email)
+        .maybeSingle()
+
+        if(respostaEmail){
+            setAlertModal("Este email já esta cadastrado")
+            setAbrirModal(true)
+            await delay(3000)
+            setAbrirModal(false)
             return
         }
 
-        const{data: respostaemail, erroremail} = await supabase
-        .from("usuarios")
+
+        const {data: respostaFuncCpf, errorFuncCpf} = await supabase
+        .from("funcionarios")
+        .select("cpf")
+        .eq("cpf", cpf)
+        .maybeSingle()
+
+        if(respostaFuncCpf){
+            setAlertModal("Este CPF já esta cadastrado")
+            setAbrirModal(true)
+            await delay(3000)
+            setAbrirModal(false)
+            return
+        }
+
+        const {data: respostaFuncEmail, errorFuncEmail} = await supabase
+        .from("funcionarios")
         .select("email")
         .eq("email", email)
         .maybeSingle()
 
-        if (respostaemail){
-            setAlertModal("Este email ja esta logado, caso não lembre sua senha clique em 'Redefinir Senha'")
+        if(respostaFuncCpf){
+            setAlertModal("Este email já esta cadastrado")
             setAbrirModal(true)
-            await delay(6000)
+            await delay(3000)
             setAbrirModal(false)
-            return
-        }
-
-        if (erroremail){
-            alert("Erro: " + erroremail)
             return
         }
 
@@ -133,7 +158,7 @@ function Cadastro(){
         setAbrirToast(true)
         await delay(5000)
         setAbrirToast(false)
-        navigate("http://localhost:5173/")
+        return <Navigate to="localhost:5173" replace />
         
     }
     return(

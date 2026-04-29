@@ -20,17 +20,17 @@ function CadastroFuncionario(){
     const [alertToast, setAlertToast] = useState(false)
 
     const mudarTelefone = (e) => {
-        let input = e.target.value.replace(/\D/g, '');
+        let inputTel = e.target.value.replace(/\D/g, '');
         
-        const formattedValue = input.replace(/^(\d{2})(\d)/g, '($1) $2').replace(/(\d)(\d{4})$/, '$1-$2');
+        const formattedValue = inputTel.replace(/^(\d{2})(\d)/g, '($1) $2').replace(/(\d)(\d{4})$/, '$1-$2');
         
         setTelefone(formattedValue);
     }
 
     const mudarCpf = (e) => {
-        let input = e.target.value.replace(/\D/g, '')
+        let inputCpf = e.target.value.replace(/\D/g, '')
 
-        const formattedValue = input.replace(/^(\d{3})(\d{3})(\d{3})/g, '$1.$2.$3').replace(/(\d)(\d{2})$/, '$1-$2');
+        const formattedValue = inputCpf.replace(/^(\d{3})(\d{3})(\d{3})/g, '$1.$2.$3').replace(/(\d)(\d{2})$/, '$1-$2');
 
         setCpf(formattedValue)
     }
@@ -44,7 +44,7 @@ function CadastroFuncionario(){
         if(!email){setAlertModal("Insira o seu email"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if(senha.length < 8){setAlertModal("A senha precisa ter no mínimo 8 caracteres"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if(confirmarSenha !== senha){setAlertModal("As senhas não coencidem"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
-        if(telefone < 14){setAlertModal("Insira seu telefone"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
+        if(telefone < 10){setAlertModal("Insira seu telefone"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if(cpf < 11){setAlertModal("Insira seu CPF"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
 
         const {data: respostaCpf, errorCpf} = await supabase
@@ -61,6 +61,21 @@ function CadastroFuncionario(){
             return
         }
 
+        const {data: respostaEmail, errorEmail} = await supabase
+        .from("usuarios")
+        .select("cpf")
+        .eq("email", email)
+        .maybeSingle()
+
+        if(respostaEmail){
+            setAlertModal("Este email já esta cadastrado")
+            setAbrirModal(true)
+            await delay(3000)
+            setAbrirModal(false)
+            return
+        }
+
+
         const {data: respostaFuncCpf, errorFuncCpf} = await supabase
         .from("funcionarios")
         .select("cpf")
@@ -75,46 +90,58 @@ function CadastroFuncionario(){
             return
         }
 
-        const{data: respostaEmpresa, errorEmpresa} = await supabase
-        .from("empresas")
-        .select("id")
-        .eq("codigoconvite", codigoConvite)
+        const {data: respostaFuncEmail, errorFuncEmail} = await supabase
+        .from("funcionarios")
+        .select("email")
+        .eq("email", email)
         .maybeSingle()
 
-        if (errorEmpresa){
-            alert("Erro: " + errorEmpresa)
+        if(respostaFuncCpf){
+            setAlertModal("Este email já esta cadastrado")
+            setAbrirModal(true)
+            await delay(3000)
+            setAbrirModal(false)
             return
         }
 
-        if(!respostaEmpresa){
-            const{data: respostaStartup, errorStartup} = await supabase
-            .from("startups")
+        const { data: respostaEmpresa, error: errorEmpresa } = await supabase
+            .from("empresas")
             .select("id")
-            .eq('codigoconvite', codigoConvite)
+            .eq("codigoconvite", codigoConvite)
             .maybeSingle()
 
+        if (errorEmpresa){
+            alert("Erro: " + errorEmpresa.message)
+            return
+        }
+
+        if (!respostaEmpresa){
+            const { data: respostaStartup, error: errorStartup } = await supabase
+                .from("startups")
+                .select("id")
+                .eq("codigoconvite", codigoConvite)
+                .maybeSingle()
+
             if (errorStartup){
-                alert("Erro: " + errorStartup)
+                alert("Erro: " + errorStartup.message)
                 return
             }
 
-            if(!respostaStartup){
+            if (!respostaStartup){
                 setAlertModal("Este código não existe, insira um válido")
                 setAbrirModal(true)
                 await delay(3000)
                 setAbrirModal(false)
                 return
             }
-            else{
-                setIdStartup(respostaStartup.id)
-                setIdEmpresa(null)
-            }
-        }
-        else{
+
+            setIdStartup(respostaStartup.id)
+            setIdEmpresa(null)
+            } 
+        else {
             setIdEmpresa(respostaEmpresa.id)
             setIdStartup(null)
-        }        
-
+        }    
         const {data: resposta, error} = await supabase
         .from("funcionarios")
         .insert([
@@ -138,7 +165,7 @@ function CadastroFuncionario(){
         setAbrirToast(true)
         await delay(3000)
         setAbrirToast(false)
-        navigate("http://localhost:5173/")
+        navigate("localhost:loginfuncionario")
     }
 
     return(

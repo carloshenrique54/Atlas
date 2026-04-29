@@ -112,19 +112,59 @@ async function FazerCadastro(e) {
         return
     }
 
-    const {data: respostaCpfUsuario, errorCpfUsuario} = await supabase
+    const {data: respostaCpf, errorCpf} = await supabase
         .from("usuarios")
         .select("cpf")
         .eq("cpf", cpf)
-        .maybeSingle();
+        .maybeSingle()
 
-        if (!respostaCpfUsuario){
-            console.log("Nenhum usuario com este cpf")
-        }
-        else{
-            setAlertModal("CPF ja cadastrado, redefina sua senha caso não lembre");
+        if(respostaCpf){
+            setAlertModal("Este CPF já esta cadastrado")
             setAbrirModal(true)
-            await delay(4000)
+            await delay(3000)
+            setAbrirModal(false)
+            return
+        }
+
+        const {data: respostaEmail, errorEmail} = await supabase
+        .from("usuarios")
+        .select("cpf")
+        .eq("email", email)
+        .maybeSingle()
+
+        if(respostaEmail){
+            setAlertModal("Este email já esta cadastrado")
+            setAbrirModal(true)
+            await delay(3000)
+            setAbrirModal(false)
+            return
+        }
+
+
+        const {data: respostaFuncCpf, errorFuncCpf} = await supabase
+        .from("funcionarios")
+        .select("cpf")
+        .eq("cpf", cpf)
+        .maybeSingle()
+
+        if(respostaFuncCpf){
+            setAlertModal("Este CPF já esta cadastrado")
+            setAbrirModal(true)
+            await delay(3000)
+            setAbrirModal(false)
+            return
+        }
+
+        const {data: respostaFuncEmail, errorFuncEmail} = await supabase
+        .from("funcionarios")
+        .select("email")
+        .eq("email", email)
+        .maybeSingle()
+
+        if(respostaFuncCpf){
+            setAlertModal("Este email já esta cadastrado")
+            setAbrirModal(true)
+            await delay(3000)
             setAbrirModal(false)
             return
         }
@@ -176,7 +216,7 @@ async function FazerCadastro(e) {
     setAbrirToast(true)
     await delay(4000)
     setAbrirToast(false)
-    Navigate("http://localhost:5173/")
+    return <Navigate to="localhost:5173" replace />
 }
 
     return(

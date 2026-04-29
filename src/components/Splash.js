@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Splash() {
+function Splash() {
   return (
     <motion.div
       className="splash"
@@ -12,3 +12,5 @@ export default function Splash() {
     </motion.div>
   );
 }
+
+export default Splash
