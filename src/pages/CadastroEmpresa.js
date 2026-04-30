@@ -202,6 +202,7 @@ async function FazerCadastro(e) {
             cpf: cpf,
             nome: nomeUsuario,
             email: email,
+            plano: "Growth",
             senha: senha,
             telefone: telefone
         }

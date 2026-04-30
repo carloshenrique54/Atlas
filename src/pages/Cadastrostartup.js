@@ -144,6 +144,7 @@ function Cadastro(){
                 nome: nomeUsuario,
                 email: email,
                 senha: senha,
+                plano: "Starter",
                 telefone: telefone
             }
         ]);
