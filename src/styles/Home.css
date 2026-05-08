@@ -134,7 +134,7 @@ h4{
 .cardF{
     display: flex;
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0px 0px 15px rgba(76, 146, 193, 0.416);
     flex-direction: column;
     justify-content: center;
@@ -359,7 +359,7 @@ h4{
     border: 3px solid rgb(0, 0, 0, 0.08);
     border-radius: 15px;
     text-align: left;
-    padding: 15px;
+    padding: 5px;
     transition: ease 0.3s;
     cursor: pointer;
 }
@@ -404,7 +404,7 @@ h4{
 .formulario {
     width: 80%; 
     margin: 60px auto;
-    padding: 40px;
+    padding: 20px;
     background-color: white; 
     border-radius: 25px; 
     border: 3px solid rgba(0, 0, 0, 0.08); 
