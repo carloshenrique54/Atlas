@@ -141,6 +141,7 @@ h4{
     align-items: center;
     text-align: center;
     border-radius: 25px;
+    width: 90%;
     transition: ease 0.3s;
 }
 
@@ -158,11 +159,13 @@ h4{
 .cardF h2{
     margin-top: 25px;
     margin-bottom: 10px;
+    font-size: 20px;
     color: #080B2A;
 }
 
 .cardF p{
     font-weight: 600;
+    font-size: 16px;
     color: #080b2ab4;
 }
 
@@ -317,8 +320,9 @@ h4{
 
 .sobre-container{
     display: grid;
-    text-align: center;
+    place-items: center;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
 }
 
 .sobreP{
@@ -402,7 +406,7 @@ h4{
 }
 
 .formulario {
-    width: 80%; 
+    width: 60%; 
     margin: 60px auto;
     padding: 20px;
     background-color: white; 
@@ -417,12 +421,12 @@ h4{
 }
 
 
-.formulario h3 {
+#contato .formulario h3 {
     text-align: center;
     font-weight: 750;
     font-size: 35px;
     color: #080B2A;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 
@@ -490,10 +494,10 @@ h4{
 
 .formulario button {
     width: 100%;
-    padding: 18px;
+    padding: 12px;
     background-color: #ff7203;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     border: 3px solid rgba(0, 0, 0, 0.08);
     border-radius: 10px;
@@ -616,16 +620,16 @@ h4{
 .cardS {
     background: #ffffff;
     box-shadow: 0px 0px 10px rgba(190, 190, 190, 0.334);
-    border-radius: 12px;
-    padding: 30px;
+    border-radius: 15px;
+    padding: 15px;
     flex: 1;
     min-width: 280px;
     max-width: 350px;
-    text-align: left; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 70%;
     align-items: center;
 }
 
@@ -640,19 +644,16 @@ h4{
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.cardS h3 {
-    color: #0f172a;
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    font-weight: 700;
+#sobre .cardS p {
+    font-weight: 600;
+    font-size: 16px;
+    color: #080b2ab4;
 }
 
-.cardSp {
-    color: #64748b;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
+#sobre .cardS h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 20px;
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 18px;
+    color: #080B2A;
 }

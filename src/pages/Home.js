@@ -135,21 +135,21 @@ function Home(){
 
                 <div className="sobre-container">
                     <div className="cardS">
+                        <FontAwesomeIcon className='sobreIcon' icon={faDesktop} />
                         <h3>Simples</h3>
                         <p className='cardSp'>Fácil de usar, com interface intuitiva e curva de aprendizado pequena.</p>
-                        <FontAwesomeIcon className='sobreIcon' icon={faDesktop} />
                     </div>
 
                     <div className="cardS">
+                        <FontAwesomeIcon className='sobreIcon' icon={faCircleCheck} />   
                         <h3>Completo</h3>
                         <p className='cardSp'>Projetos, equipes e tarefas em um mesmo sistema.</p>
-                        <FontAwesomeIcon className='sobreIcon' icon={faCircleCheck} />   
                     </div>
 
                     <div className="cardS">
+                        <FontAwesomeIcon className='sobreIcon' icon={faBolt} />
                         <h3>Eficiente</h3>
                         <p className='cardSp'>Aumente sua produtividade com o máximo de organização.</p>
-                        <FontAwesomeIcon className='sobreIcon' icon={faBolt} />
                     </div>
                 </div>
             </section>
