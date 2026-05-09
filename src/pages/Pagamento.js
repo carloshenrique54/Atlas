@@ -277,7 +277,7 @@ function Pagamento(){
             {alertToast}
         </div>
 
-        <main>
+        <main className="payment-page">
             <span className="copiado">Código copiado</span>
                 <form onSubmit={RealizarPagamento}>
                     <div className="informacoesPessoais">

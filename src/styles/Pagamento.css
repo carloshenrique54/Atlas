@@ -1,218 +1,275 @@
-main{
-    display: flex;
-    justify-content: space-evenly;
+/* ─── Pagamento — White Theme, Scoped to .payment-page ─── */
+
+.payment-page {
+  min-height: 100vh;
+  background: #F8FAFF;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: calc(70px + 40px) 40px 40px;
+  position: relative;
 }
 
-main form{
-    display: flex;
-    gap: 50px;
-    width: 100%;
+/* Form — centers the two panels */
+.payment-page form {
+  display: flex;
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 1000px;
+  align-items: flex-start;
 }
 
-.informacoesPessoais{
-    width: 50%;
+/* Panels */
+.informacoesPessoais,
+.informacoesPagamento {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-.informacoesPessoais{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    border: 3px solid rgba(0, 0, 0, 0.080);
-    border-radius: 15px;
-    margin: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 60%;
+.informacoesPessoais { flex: 1.4; }
+.informacoesPagamento { flex: 1; }
+
+/* Titles */
+.informacoesPessoais h2,
+.informacoesPagamento h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-.informacoesPessoais input{
-    font-size: 15px;
-    border-radius: 10px;
-    outline: none;
-    border: solid 3px rgba(0, 0, 0, 0.080);
-    padding: 15px;
-    transition: ease 0.3s;
+/* Labels */
+.informacoesPessoais label,
+.informacoesPagamento label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+  margin-top: var(--space-md);
 }
 
-.informacoesPagamento button{
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-    justify-content: center;
-    width: 100%;
-    background-color: #ff7203;
-    color: white;
-    padding: 10px;
-    border: 3px solid rgba(0, 0, 0, 0.080);
-    border-radius: 10px;
-    font-size: 20px;
-    transition: ease 0.3s;
+.informacoesPessoais label:first-of-type,
+.informacoesPagamento label:first-of-type { margin-top: 0; }
+
+/* Inputs */
+.informacoesPessoais input,
+.informacoesPagamento input,
+.cartao input {
+  width: 100%;
+  padding: 11px 14px;
+  background: #F8FAFF;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: all var(--transition-base);
+  outline: none;
+  font-family: var(--font-base);
 }
 
-button:hover{
-    background-color: #d55c00;
-    transform: scale(1.03, 1.03);
+.informacoesPessoais input::placeholder,
+.informacoesPagamento input::placeholder,
+.cartao input::placeholder { color: rgba(0,0,0,0.25); }
+
+.informacoesPessoais input:focus,
+.informacoesPagamento input:focus,
+.cartao input:focus {
+  border-color: var(--color-primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(79,110,247,0.1);
 }
 
-.informacoesPagamento button:active{
-    border: 3px solid rgba(0, 0, 0, 0.080);
+.desativados {
+  background: rgba(0,0,0,0.03) !important;
+  color: rgba(0,0,0,0.3) !important;
+  cursor: not-allowed;
 }
 
-.informacoesPessoais :focus{
-    border: solid 3px #3647ff;
+/* Select */
+.informacoesPagamento select {
+  width: 100%;
+  padding: 11px 14px;
+  background: #F8FAFF;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-dark);
+  outline: none;
+  font-family: var(--font-base);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-top: 2px;
+  margin-bottom: var(--space-md);
 }
 
-.cartao input :focus{
-    border: solid 3px #3647ff;
+.informacoesPagamento select:focus {
+  border-color: var(--color-primary);
+  background: #fff;
 }
 
-.informacoesPagamento{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    border: 3px solid rgba(0, 0, 0, 0.080);
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px;
-    margin-bottom: 20px;
-    width: 40%;
+/* Address grid */
+.endereco {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
-.informacoesPagamento select{
-    font-size: 15px;
-    border-radius: 10px;
-    font-size: 15px;
-    margin-bottom: 15px;
-    outline: none;
-    border: solid 3px rgba(0, 0, 0, 0.299);
-    padding: 10px;
-    transition: ease 0.3s;
+.enderecoInput { display: flex; flex-direction: column; }
+
+/* Pix */
+.pix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
 }
 
-.informacoesPagamento p{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 3px solid rgba(8, 11, 42, 0.080);
-    font-size: 12px;
-    padding: 10px;
-    border-radius: 10px;
+.qrCode {
+  width: 150px; height: 150px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 6px;
+  background: #F8FAFF;
 }
 
-.informacoesPagamento input{
-    font-size: 15px;
-    border-radius: 10px;
-    outline: none;
-    border: solid 3px rgba(0, 0, 0, 0.080);
-    padding: 15px;
-    transition: ease 0.3s;
+/* Pix code */
+.informacoesPagamento p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F8FAFF;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-size: 11px;
+  color: var(--text-muted);
+  word-break: break-all;
+  line-height: 1.5;
+  font-family: monospace;
 }
 
-.informacoesPagamento p .iconeCopia{
-    font-size: 20px;
-    cursor: pointer;
-    transition: ease 0.3s;
+.iconeCopia {
+  font-size: 17px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color var(--transition-base);
+  flex-shrink: 0;
 }
 
-.informacoesPagamento p .iconeCopia:hover{
-    color: #3647ff;
+.iconeCopia:hover { color: var(--color-primary); }
+
+/* Card payment fields */
+.cartao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
 }
 
-.pix{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Submit buttons — orange (form action buttons) */
+.informacoesPagamento button {
+  width: 100%;
+  padding: 13px 24px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  color: #fff;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  transition: all var(--transition-base);
+  margin-top: var(--space-md);
+  box-shadow: 0 6px 20px rgba(255,122,53,0.3);
+  font-family: var(--font-base);
 }
 
-.copiado{
-    display: none;
+.informacoesPagamento button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255,122,53,0.45);
 }
 
-.toast{
-    position: fixed;
-    background: #95ff9e;
-    color: rgb(8, 51, 0);
-    padding: 20px;
-    display: flex;
-    transform: translateY(-1000px);
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    width: 100%;
-    font-weight: bold;
-    z-index: 999;
-    transition: 0.8s ease;
+.informacoesPagamento button:active { transform: translateY(0); }
+
+/* Boleto text */
+.informacoesPagamento > div > p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  line-height: 1.65;
 }
 
-.toast.ativo{
-    transform: translateY(0);
+.informacoesPagamento strong { color: var(--text-dark); }
+
+/* Toast & Modal */
+.toast {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  padding: 16px var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  transform: translateY(-100%);
+  transition: transform var(--transition-slow);
+  box-shadow: 0 4px 20px rgba(16,185,129,0.35);
+  font-family: var(--font-base);
 }
 
-.qrCode{
-    width: 45%;
+.toast.ativo { transform: translateY(0); }
+
+.modalAviso {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: #fff;
+  padding: 16px var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all var(--transition-slow);
+  font-family: var(--font-base);
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -20px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
+.modalAviso.ativo { transform: translateY(0); opacity: 1; }
+.modalAviso h3 { font-size: var(--font-size-base); font-weight: 600; margin: 0; color: #fff; }
+
+.copiado { display: none; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .payment-page { padding: calc(70px + 20px) 16px 20px; }
+  .payment-page form { flex-direction: column; }
+  .informacoesPessoais,
+  .informacoesPagamento { flex: unset; width: 100%; }
+  .endereco { grid-template-columns: 1fr; }
 }
 
-.cartao{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.cartao input{
-    font-size: 15px;
-    border-radius: 10px;
-    outline: none;
-    border: solid 3px rgba(0, 0, 0, 0.080);
-    padding: 15px;
-    transition: ease 0.3s;
-}
-
-.endereco{
-    display: grid;
-    grid-template-columns: repeat(2, 4fr);
-    column-gap: 60px;
-}
-
-.enderecoInput{
-    display: flex;
-    flex-direction: column;
-}
-
-.desativados{
-    background-color: rgba(0, 0, 0, 0.067);
-}
-
-.modalAviso{
-    display: flex;;
-    color: black;
-    margin-top: 3.0%;
-    width: 100%;
-    color: rgb(80, 0, 0);
-    position: absolute;
-    transform: translateY(-100px);
-    justify-self: center;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    background-color: rgb(255, 167, 167);
-    z-index: 999;
-    transition: ease 0.5s;
-    opacity: 0;
-}
-
-.modalAviso.ativo{
-    transform: translateY(0);
-    opacity: 100%;
+@media (max-width: 600px) {
+  .informacoesPessoais,
+  .informacoesPagamento { padding: var(--space-md); }
 }
