@@ -221,7 +221,7 @@ function Cadastro(){
                     <button className='Cadastrar'>Fazer cadastro</button>
                     <div className="links">
                         <Link to="/cadastrofuncionario">Cadastrar como funcionario</Link>
-                        <button type='button' onClick={navigate("https://localhost:5173")}>Ja tenho conta</button>
+                        <button type='button' onClick={() => navigate("https://localhost:5173")}>Ja tenho conta</button>
                         <Link to="/cadastroempresa"> Cadastrar como empresa</Link>
                     </div>
                 </form>
