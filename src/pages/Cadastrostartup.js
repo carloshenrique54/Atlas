@@ -57,6 +57,7 @@ function Cadastro(){
 
         if (errorCpf){
             alert("Erro: " , errorCpf.message)
+            return
         }
 
         if(respostaCpf){
@@ -75,6 +76,7 @@ function Cadastro(){
 
         if (errorEmail){
             alert("Erro: " , errorEmail.message)
+            return
         }
 
         if(respostaEmail){
@@ -94,6 +96,7 @@ function Cadastro(){
 
         if (errorFuncCpf){
             alert("Erro: " , errorFuncCpf.message)
+            return
         }
 
         if(respostaFuncCpf){
@@ -218,7 +221,7 @@ function Cadastro(){
                     <button className='Cadastrar'>Fazer cadastro</button>
                     <div className="links">
                         <Link to="/cadastrofuncionario">Cadastrar como funcionario</Link>
-                        <Link onClick={navigate("https://localhost:5173")}>Ja tenho conta</Link>
+                        <button type='button' onClick={navigate("https://localhost:5173")}>Ja tenho conta</button>
                         <Link to="/cadastroempresa"> Cadastrar como empresa</Link>
                     </div>
                 </form>
