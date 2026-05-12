@@ -49,18 +49,15 @@ function Cadastro(){
         if (senha.length < 8) {setAlertModal("Senha precisa ter no mínimo 8 caracteres"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
         if (senha !== senhaConfirmar) {setAlertModal("As senhas não coencidem"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return}
 
-
-        const{data: respostacpf, errorcpf} = await supabase
-        .from("usuarios")
-        .select("cpf")
-        .eq("cpf", cpf)
-        .maybeSingle()
-
         const {data: respostaCpf, errorCpf} = await supabase
         .from("usuarios")
         .select("cpf")
         .eq("cpf", cpf)
         .maybeSingle()
+
+        if (errorCpf){
+            alert("Erro: " , errorCpf.message)
+        }
 
         if(respostaCpf){
             setAlertModal("Este CPF já esta cadastrado")
@@ -75,6 +72,10 @@ function Cadastro(){
         .select("cpf")
         .eq("email", email)
         .maybeSingle()
+
+        if (errorEmail){
+            alert("Erro: " , errorEmail.message)
+        }
 
         if(respostaEmail){
             setAlertModal("Este email já esta cadastrado")
@@ -91,6 +92,10 @@ function Cadastro(){
         .eq("cpf", cpf)
         .maybeSingle()
 
+        if (errorFuncCpf){
+            alert("Erro: " , errorFuncCpf.message)
+        }
+
         if(respostaFuncCpf){
             setAlertModal("Este CPF já esta cadastrado")
             setAbrirModal(true)
@@ -98,12 +103,6 @@ function Cadastro(){
             setAbrirModal(false)
             return
         }
-
-        const {data: respostaFuncEmail, errorFuncEmail} = await supabase
-        .from("funcionarios")
-        .select("email")
-        .eq("email", email)
-        .maybeSingle()
 
         if(respostaFuncCpf){
             setAlertModal("Este email já esta cadastrado")
@@ -219,7 +218,8 @@ function Cadastro(){
                     <button className='Cadastrar'>Fazer cadastro</button>
                     <div className="links">
                         <Link to="/cadastrofuncionario">Cadastrar como funcionario</Link>
-                        <Link to="/cadastroempresa">Cadastrar como empresa</Link>
+                        <Link onClick={navigate("https://localhost:5173")}>Ja tenho conta</Link>
+                        <Link to="/cadastroempresa"> Cadastrar como empresa</Link>
                     </div>
                 </form>
             </div>
