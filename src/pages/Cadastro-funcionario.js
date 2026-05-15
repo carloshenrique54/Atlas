@@ -182,14 +182,26 @@ function CadastroFuncionario(){
                 <form onSubmit={RealizarCadastro}>
                     <label>Código da empresa:</label>
                     <input onChange={e => setCodigoConvite(e.target.value)} value={codigoConvite} maxLength={5} type="text" placeholder="Ex: 86225"></input>
-                    <label>Nome Completo:</label>
-                    <input onChange={e => setNome(e.target.value)} value={nome} type="text"></input>
-                    <label>E-mail:</label>
-                    <input onChange={e => setEmail(e.target.value)} value={email} type="email" placeholder="exemplo@gmail.com"></input>
-                    <label>Senha:</label>
-                    <input onChange={e => setSenha(e.target.value)} value={senha} type="password" placeholder="Mínimo de 8 digitos"></input>
-                    <label>Confirmar Senha:</label>
-                    <input onChange={e => setConfirmarSenha(e.target.value)} value={confirmarSenha} type="password" placeholder=""></input>
+                    <div className="inputSenha">
+                        <div className="inputCont">
+                            <label>Nome Completo:</label>
+                            <input onChange={e => setNome(e.target.value)} value={nome} type="text"></input>
+                        </div>
+                        <div className="inputCont">
+                            <label>E-mail:</label>
+                            <input onChange={e => setEmail(e.target.value)} value={email} type="email" placeholder="exemplo@gmail.com"></input>
+                        </div>
+                    </div>
+                    <div className="inputSenha">
+                        <div className="inputCont">
+                            <label>Senha:</label>
+                            <input onChange={e => setSenha(e.target.value)} value={senha} type="password" placeholder="Mínimo de 8 digitos"></input>
+                        </div>
+                        <div className="inputCont">
+                            <label>Confirmar Senha:</label>
+                            <input onChange={e => setConfirmarSenha(e.target.value)} value={confirmarSenha} type="password" placeholder=""></input>
+                        </div>
+                    </div>
                     <div id="numbersCadastro">
                         <div className="inputNumber">
                             <label>Telefone:</label>

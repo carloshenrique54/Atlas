@@ -14,7 +14,7 @@ main img {
 
 /* Side image */
 .imagemCadastro {
-  width: 43%;
+  width: 30%;
   height: 100vh;
   object-fit: cover;
   position: sticky;
@@ -29,7 +29,7 @@ main img {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 40px var(--space-xl);
+  margin-top: 60px;
 }
 
 .cadastroForms form {
@@ -224,4 +224,15 @@ main img {
   .cadastroForms form {
     padding: var(--space-md);
   }
+}
+
+.inputSenha{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.inputCont{
+  width: 48%;
 }

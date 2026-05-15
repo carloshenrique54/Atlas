@@ -27,6 +27,7 @@ function Pagamento(){
     const [abrirToast, setAbrirToast] = useState(false);
     const [alertToast, setAlertToast] = useState("a");
     const [numeroCasa, setNumeroCasa] = useState("")
+    const [frenteCartao, setFrenteCartao] = useState(true)
 
     function gerarBoleto() {
         const doc = new jsPDF();
@@ -98,6 +99,7 @@ function Pagamento(){
         const formattedValue = input.replace(/(.{4})/g, '$1 ').trim();
         
         setNumeroCartao(formattedValue);
+        setFrenteCartao(true)
     }
 
     const mudarTelefone = (e) => {
@@ -250,6 +252,13 @@ function Pagamento(){
                 )
             case "cartao":
                 return(<div className="cartao">
+                    <div className="cartaoVisual">
+                        <h4>{numeroCartao}</h4>
+                        <div>
+                            <h4>{nomeCartao}</h4>
+                            <h4>{validade}</h4>
+                        </div>
+                    </div>
                     <input onChange={mudarCartao} value ={numeroCartao} maxLength={19} type="text" placeholder="Número do cartão" />
                     <input onChange={(e) => setNomeCartao(e.target.value)} value={nomeCartao} type="text" placeholder="Nome no cartão" />
                     <input maxLength={5} value={validade} onChange={mudarValidade} type="text" placeholder="MM/AA" />
@@ -284,10 +293,16 @@ function Pagamento(){
                         <h2>Informações Pessoais</h2>
                         <label>Nome:</label>
                         <input value={nome} onChange={(e) => setNome(e.target.value)} type="text" placeholder="Nome completo"></input>
-                        <label>E-mail:</label>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="exemplo@gmail.com"></input>
-                        <label>CPF:</label>
-                        <input value={cpf} onChange={mudarCpf} type="text" maxLength={14} placeholder="Apenas números"></input>
+                        <div className="inputBoxPagamento">
+                            <div className="inputsPagamento">
+                                <label>E-mail:</label>
+                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="exemplo@gmail.com"></input>
+                            </div>
+                            <div className="inputsPagamento">
+                                <label>CPF:</label>
+                                <input value={cpf} onChange={mudarCpf} type="text" maxLength={14} placeholder="Apenas números"></input>
+                            </div>
+                        </div>
                         <label>Telefone:</label>
                         <input maxLength={14} onChange={mudarTelefone} value={telefone} type="tel" placeholder="(11) 1234-5678"></input>
                     <div className="endereco">
