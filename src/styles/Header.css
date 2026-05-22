@@ -68,6 +68,14 @@ header.scrolled {
   transition: color var(--transition-base);
 }
 
+.header-nav a.ativo{
+  color: var(--color-primary);
+}
+
+.header-nav a.ativo::after{
+  width: 100%; 
+}
+
 .header-nav a::after {
   content: '';
   position: absolute;

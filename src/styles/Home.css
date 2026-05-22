@@ -754,9 +754,20 @@
 }
 
 @media (max-width: 600px) {
-  .section-inner { padding: var(--space-2xl) var(--space-md); }
+  .section-inner { padding: var(--space-2xl) var(--space-md);}
   .features-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }
   .hero-btn-primary, .hero-btn-secondary { width: 100%; justify-content: center; }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
