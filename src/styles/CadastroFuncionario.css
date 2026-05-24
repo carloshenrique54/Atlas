@@ -1,9 +1,5 @@
 /* CadastroFuncionario — herda layout de CadastroStartup.css */
 
-.imagemCadastro {
-    width: 34%;
-}
-
 #cadastroFuncForms {
     display: flex;
     flex-direction: column;

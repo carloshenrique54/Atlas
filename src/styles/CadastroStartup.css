@@ -18,16 +18,8 @@
 
 /* ── Side image ── */
 .imagemCadastro {
-  width: 30%;
-  min-width: 200px;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  position: sticky;
-  top: 0;
-  flex-shrink: 0;
-  display: block;
-  box-shadow: 4px 0 24px rgba(0,0,0,0.08);
+  width: 46%;
+  height: auto;
 }
 
 /* ── Form panel ── */
@@ -36,8 +28,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 20px 24px;
+  width: 50%;
   overflow-y: auto;
   min-height: 100vh;
 }
@@ -270,6 +261,7 @@
 
   .cadastroForms {
     padding: 60px 16px 28px;
+    width: 100%;
     justify-content: flex-start;
   }
 
