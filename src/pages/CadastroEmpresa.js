@@ -1,6 +1,6 @@
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "../services/supabase.js";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/CadastroStartup.css";
 
 function CadastroEmpresa() {
@@ -14,9 +14,6 @@ function CadastroEmpresa() {
     const [senhaConfirmar, setSenhaConfirmar] = useState("");
     const [cpf, setCpf] = useState("");
     const [cnpj, setCnpj] = useState("");
-    const [area, setAreaAtuacao] = useState("");
-    const [cep, setCep] = useState("");
-    const [cepCerto, setCepCerto] = useState(false);
     const [abrirModal, setAbrirModal] = useState(false);
     const [alertModal, setAlertModal] = useState("");
     const [abrirToast, setAbrirToast] = useState(false);
@@ -38,12 +35,6 @@ function CadastroEmpresa() {
         setTelefone(formatted);
     };
 
-    const mudarCep = (e) => {
-        let input = e.target.value.replace(/\D/g, "");
-        const formatted = input.replace(/^(\d{5})(\d)/, "$1-$2");
-        setCep(formatted);
-    };
-
     const mudarCnpj = (e) => {
         let input = e.target.value.replace(/\D/g, "");
         const formatted = input
@@ -55,15 +46,6 @@ function CadastroEmpresa() {
         setCnpj(formatted);
     };
 
-    useEffect(() => {
-        if (cep.length === 9) {
-            const cepPesquisa = cep.replace(/\D/g, "");
-            fetch(`https://viacep.com.br/ws/${cepPesquisa}/json/`)
-                .then(res => res.json())
-                .then(dados => setCepCerto(!dados.erro));
-        }
-    }, [cep]);
-
     async function FazerCadastro(e) {
         e.preventDefault();
         const cpfLimpo = cpf.replace(/\D/g, "");
@@ -74,11 +56,9 @@ function CadastroEmpresa() {
         if (cpfLimpo.length < 11) { setAlertModal("Preencha o seu CPF"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
         if (!telLimpo)            { setAlertModal("Preencha o seu telefone"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
         if (!email)               { setAlertModal("Preencha o seu e-mail"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
-        if (!area)                { setAlertModal("Coloque a sua área de atuação"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
         if (!senha)               { setAlertModal("Preencha a sua senha"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
         if (senha.length < 8)     { setAlertModal("A senha precisa ter no mínimo 8 caracteres"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
         if (senha !== senhaConfirmar) { setAlertModal("As senhas não coincidem"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
-        if (!cepCerto)            { setAlertModal("Insira um CEP válido"); setAbrirModal(true); await delay(2000); setAbrirModal(false); return; }
 
         const { data: resposta, error } = await supabase
             .from("pagamentos").select("usuario_cpf").eq("usuario_cpf", cpfLimpo).maybeSingle();
@@ -108,7 +88,7 @@ function CadastroEmpresa() {
 
         const { error: errorEmpresa } = await supabase
             .from("empresas")
-            .insert([{ nome: nomeEmpresa, cnpj, cep, numerofuncionarios: 1, dono_cpf: cpfLimpo, dono_email: email, areaatuacao: area, codigoconvite: codigo }]);
+            .insert([{ nome: nomeEmpresa, cnpj, numerofuncionarios: 1, dono_cpf: cpfLimpo, dono_email: email, codigoconvite: codigo }]);
         if (errorEmpresa) { alert("Erro: " + errorEmpresa.message); return; }
 
         const { error: errorUsuario } = await supabase
@@ -132,8 +112,14 @@ function CadastroEmpresa() {
                 {alertToast}
             </div>
 
-            <main className="cadastro-main">
-                <img className="imagemCadastro" src="/imagens/forms.png" alt="Imagem do atlas" />
+            <main className="cadastro-main"
+            onMouseMove={(e) => {
+            const { clientX, clientY } = e
+
+            e.currentTarget.style.setProperty('--x', `${clientX}px`)
+            e.currentTarget.style.setProperty('--y', `${clientY}px`)
+        }}
+        >
 
                 <div className="cadastroForms">
                     <div className="cadastro-form-header">
@@ -149,16 +135,8 @@ function CadastroEmpresa() {
                                 <input onChange={e => setNomeEmpresa(e.target.value)} value={nomeEmpresa} type="text" placeholder="Nome da sua empresa" />
                             </div>
                             <div className="inputBox">
-                                <label>Área de Atuação</label>
-                                <input onChange={e => setAreaAtuacao(e.target.value)} value={area} type="text" placeholder="Ex: Marketing Digital" />
-                            </div>
-                            <div className="inputBox">
                                 <label>CNPJ</label>
                                 <input maxLength={18} onChange={mudarCnpj} value={cnpj} type="text" placeholder="00.000.000/0000-00" />
-                            </div>
-                            <div className="inputBox">
-                                <label>CEP</label>
-                                <input maxLength={9} onChange={mudarCep} value={cep} type="text" placeholder="00000-000" />
                             </div>
                         </div>
 
