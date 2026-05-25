@@ -1,5 +1,17 @@
 /* CadastroFuncionario — herda layout de CadastroStartup.css */
 
+.cadastro-main {
+  --x: 50%;
+  --y: 50%;
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  background: #0A0E27;
+}
+
 #cadastroFuncForms {
     display: flex;
     flex-direction: column;

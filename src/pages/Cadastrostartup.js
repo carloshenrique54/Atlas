@@ -93,9 +93,15 @@ function Cadastro(){
             {alertToast}
         </div>
 
-        <main className="cadastro-main">
-            <img className="imagemCadastro" src="/imagens/forms.png" alt="imagem do atlas" />
+        <main
+         className="cadastro-main"
+         onMouseMove={(e) => {
+            const { clientX, clientY } = e
 
+            e.currentTarget.style.setProperty('--x', `${clientX}px`)
+            e.currentTarget.style.setProperty('--y', `${clientY}px`)
+        }}
+        >
             <div className="cadastroForms">
                 <div className="cadastro-form-header">
                     <h1>Criar conta — Startup</h1>
