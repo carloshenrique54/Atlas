@@ -123,8 +123,15 @@ function CadastroEmpresa() {
 
                 <div className="cadastroForms">
                     <div className="cadastro-form-header">
-                        <h1>Cadastro de Empresa</h1>
-                        <p>Preencha os dados abaixo para registrar sua empresa</p>
+                        <div>
+                            <h1>Cadastro de Empresa</h1>
+                            <p>Preencha os dados abaixo para criar sua conta</p>
+                        </div>
+                        <div className="links">
+                            <Link to="/cadastrofuncionario">Sou funcionário</Link>
+                            <button type="button" onClick={() => navigate("/")}>Já tenho conta</button>
+                            <Link to="/cadastrostartup">Sou startup</Link>
+                        </div>
                     </div>
 
                     <form onSubmit={FazerCadastro}>
@@ -174,11 +181,7 @@ function CadastroEmpresa() {
 
                         <button className="Cadastrar" type="submit">Fazer cadastro</button>
 
-                        <div className="links">
-                            <Link to="/cadastrofuncionario">Sou funcionário</Link>
-                            <button type="button" onClick={() => navigate("/")}>Já tenho conta</button>
-                            <Link to="/cadastrostartup">Sou startup</Link>
-                        </div>
+                        
                     </form>
                 </div>
             </main>

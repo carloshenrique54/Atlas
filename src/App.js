@@ -6,7 +6,6 @@ import './styles/Header.css';
 import './styles/Footer.css';
 import './styles/Home.css'
 import './styles/CadastroStartup.css'
-import './styles/CadastroFuncionario.css'
 import './styles/Login.css'
 import './styles/Pagamento.css'
 import './styles/Splash.css'
