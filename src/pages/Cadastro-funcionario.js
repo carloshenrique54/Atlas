@@ -115,8 +115,15 @@ function CadastroFuncionario() {
 
                 <div className="cadastroForms">
                     <div className="cadastro-form-header">
-                        <h1>Cadastro de Funcionário</h1>
-                        <p>Preencha os dados abaixo para criar sua conta</p>
+                        <div>
+                            <h1>Cadastro de Funcionário</h1>
+                            <p>Preencha os dados abaixo para criar sua conta</p>
+                        </div>
+                        <div className="links">
+                            <Link to="/cadastrostartup">Sou startup</Link>
+                            <button type="button" onClick={() => navigate("/")}>Já tenho conta</button>
+                            <Link to="/cadastroempresa">Sou empresa</Link>
+                        </div>
                     </div>
 
                     <form onSubmit={RealizarCadastro}>
@@ -162,11 +169,7 @@ function CadastroFuncionario() {
 
                         <button className="Cadastrar" type="submit">Fazer cadastro</button>
 
-                        <div className="links">
-                            <Link to="/cadastrostartup">Sou startup</Link>
-                            <button type="button" onClick={() => navigate("/")}>Já tenho conta</button>
-                            <Link to="/cadastroempresa">Sou empresa</Link>
-                        </div>
+                        
                     </form>
                 </div>
             </main>

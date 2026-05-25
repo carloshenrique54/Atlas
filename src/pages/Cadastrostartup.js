@@ -104,8 +104,15 @@ function Cadastro(){
         >
             <div className="cadastroForms">
                 <div className="cadastro-form-header">
-                    <h1>Criar conta — Startup</h1>
-                    <p>Preencha os dados abaixo para começar</p>
+                    <div className='cadastro-header-titulo'>
+                        <h1>Cadastro de Startup</h1>
+                        <p>Preencha os dados abaixo para começar</p>
+                    </div>
+                    <div className="links">
+                        <Link to="/cadastrofuncionario">Sou funcionário</Link>
+                        <button type="button" onClick={() => navigate("https://instagram.com/")}>Já tenho conta</button>
+                        <Link to="/cadastroempresa">Sou empresa</Link>
+                    </div>
                 </div>
 
                 <form onSubmit={FazerCadastro}>
@@ -155,11 +162,6 @@ function Cadastro(){
 
                     <button className="Cadastrar" type="submit">Fazer cadastro</button>
 
-                    <div className="links">
-                        <Link to="/cadastrofuncionario">Sou funcionário</Link>
-                        <button type="button" onClick={() => navigate("/")}>Já tenho conta</button>
-                        <Link to="/cadastroempresa">Sou empresa</Link>
-                    </div>
                 </form>
             </div>
         </main>
