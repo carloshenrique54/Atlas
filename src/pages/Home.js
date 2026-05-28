@@ -189,7 +189,7 @@ function Home() {
                 <span className="price-value">Grátis</span>
               </div>
               <ul className="plan-features">
-                <li><FontAwesomeIcon icon={faCheck} className="check-icon" />Até 12 usuários</li>
+                <li><FontAwesomeIcon icon={faCheck} className="check-icon" />Até 8 usuários</li>
                 <li><FontAwesomeIcon icon={faCheck} className="check-icon" />Gestão de tarefas</li>
                 <li><FontAwesomeIcon icon={faCheck} className="check-icon" />Dashboard completo</li>
                 <li><FontAwesomeIcon icon={faCheck} className="check-icon" />Suporte 24 horas</li>

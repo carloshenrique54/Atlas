@@ -83,6 +83,47 @@ function CadastroFuncionario() {
             empresaId = respostaEmpresa.id;
         }
 
+        // Verifica limite de funcionários
+if (startupId) {
+    const { count, error: countError } = await supabase
+        .from("funcionarios")
+        .select("*", { count: "exact", head: true })
+        .eq("startup_id", startupId);
+
+    if (countError) {
+        alert("Erro: " + countError.message);
+        return;
+    }
+
+    if (count >= 8) {
+        setAlertModal("Esta startup atingiu o limite máximo de 8 funcionários");
+        setAbrirModal(true);
+        await delay(3000);
+        setAbrirModal(false);
+        return;
+    }
+}
+
+    if (empresaId) {
+        const { count, error: countError } = await supabase
+            .from("funcionarios")
+            .select("*", { count: "exact", head: true })
+            .eq("empresa_id", empresaId);
+
+        if (countError) {
+            alert("Erro: " + countError.message);
+            return;
+        }
+
+        if (count >= 32) {
+            setAlertModal("Esta empresa atingiu o limite máximo de 32 funcionários");
+            setAbrirModal(true);
+            await delay(3000);
+            setAbrirModal(false);
+            return;
+        }
+}
+
         const { error } = await supabase
             .from("funcionarios")
             .insert([{ nome, email, telefone: telLimpo, cpf: cpfLimpo, empresa_id: empresaId, startup_id: startupId, senha }]);
