@@ -19,6 +19,24 @@
   align-items: center;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.75rem);
   font-weight: 800;

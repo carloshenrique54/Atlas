@@ -26,6 +26,22 @@ function Home() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    reveals.forEach((el) => observer.observe(el));
+  }, []);
+
   const features = [
     { icon: faUserGroup, title: 'Gestão de Clientes', desc: 'Organize e acompanhe todos os seus clientes em um só lugar com visibilidade total.' },
     { icon: faDollarSign, title: 'Controle Financeiro', desc: 'Monitore receitas, despesas e fluxo de caixa com dashboards intuitivos.' },
@@ -112,12 +128,12 @@ function Home() {
       {/* ── Funcionalidades ── */}
       <section id="funcionalidades" className="features-section">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">Funcionalidades</span>
-            <h2 className="section-title light">Tudo o que você precisa para gerenciar</h2>
-            <p className="section-subtitle light">Uma plataforma completa que centraliza toda a operação da sua empresa</p>
+          <div className="section-header reveal">
+            <span className="section-label reveal">Funcionalidades</span>
+            <h2 className="section-title light reveal">Tudo o que você precisa para gerenciar</h2>
+            <p className="section-subtitle light reveal">Uma plataforma completa que centraliza toda a operação da sua empresa</p>
           </div>
-          <div className="features-grid">
+          <div className="features-grid reveal">
             {features.map((f, i) => (
               <div className="feature-card" key={i}>
                 <div className="feature-icon-wrap">
@@ -134,12 +150,12 @@ function Home() {
       {/* ── Benefícios ── */}
       <section id="beneficios" className="benefits-section">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">Benefícios</span>
-            <h2 className="section-title">Por que escolher o Atlas?</h2>
-            <p className="section-subtitle">Transforme a forma como sua empresa opera, do primeiro dia</p>
+          <div className="section-header reveal">
+            <span className="section-label reveal">Benefícios</span>
+            <h2 className="section-title reveal">Por que escolher o Atlas?</h2>
+            <p className="section-subtitle reveal">Transforme a forma como sua empresa opera, do primeiro dia</p>
           </div>
-          <div className="benefits-grid">
+          <div className="benefits-grid reveal">
             {benefits.map((b, i) => (
               <div className="benefit-card" key={i}>
                 <div className="benefit-icon-wrap">
@@ -156,12 +172,12 @@ function Home() {
       {/* ── Planos ── */}
       <section id="planos" className="plans-section">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">Planos</span>
-            <h2 className="section-title light">Planos que crescem com sua empresa</h2>
-            <p className="section-subtitle light">Comece gratuitamente e escale conforme suas necessidades</p>
+          <div className="section-header reveal">
+            <span className="section-label reveal">Planos</span>
+            <h2 className="section-title light reveal">Planos que crescem com sua empresa</h2>
+            <p className="section-subtitle light reveal">Comece gratuitamente e escale conforme suas necessidades</p>
           </div>
-          <div className="plans-grid">
+          <div className="plans-grid reveal">
 
             <div className="plan-card">
               <div className="plan-icon-wrap">
@@ -228,15 +244,15 @@ function Home() {
       {/* ── Sobre ── */}
       <section id="sobre" className="about-section">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">Sobre</span>
-            <h2 className="section-title">Saiba mais sobre nossa aplicação</h2>
-            <p className="section-subtitle about-desc">
+          <div className="section-header reveal">
+            <span className="section-label reveal">Sobre</span>
+            <h2 className="section-title reveal">Saiba mais sobre nossa aplicação</h2>
+            <p className="section-subtitle about-desc reveal">
               O Atlas é uma plataforma que centraliza a gestão de empresas, equipes e projetos em um só lugar,
               trazendo mais organização e controle para o dia a dia.
             </p>
           </div>
-          <div className="about-grid">
+          <div className="about-grid reveal">
             <div className="about-card">
               <div className="about-icon-wrap">
                 <FontAwesomeIcon icon={faDesktop} />
@@ -265,15 +281,15 @@ function Home() {
       {/* ── Contato ── */}
       <section id="contato" className="contact-section">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">Contato</span>
-            <h2 className="section-title light">Tem alguma dúvida? Nos conte!</h2>
+          <div className="section-header reveal">
+            <span className="section-label reveal">Contato</span>
+            <h2 className="section-title light reveal">Tem alguma dúvida? Nos conte!</h2>
           </div>
 
           <div className="contact-layout">
             <div className="faq-col">
-              <h3 className="faq-heading">Perguntas Frequentes</h3>
-              <div className="faq-list">
+              <h3 className="faq-heading reveal">Perguntas Frequentes</h3>
+              <div className="faq-list reveal">
                 {faqs.map((faq, i) => (
                   <div
                     key={i}
@@ -293,7 +309,7 @@ function Home() {
             </div>
 
             <div className="contact-form-col">
-              <div className="contact-form-card">
+              <div className="contact-form-card reveal">
                 <h3>Entre em contato</h3>
                 <p className="form-subtitle">Preencha os campos abaixo para que possamos ajudá-lo.</p>
                 <form>

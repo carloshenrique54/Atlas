@@ -41,7 +41,11 @@ function Header() {
     }
   }, [scrollY])
 
-  console.log(scrollY)
+  useEffect(() => {
+    if (window.location.pathname === "/pagamento" || window.location.pathname === "/cadastrofuncionario"|| window.location.pathname === "/cadastroempresa" || window.location.pathname === "/cadastrostartup"){
+    setProsicaoTela(null)
+  }
+  })
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
