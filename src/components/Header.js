@@ -42,7 +42,7 @@ function Header() {
   }, [scrollY])
 
   useEffect(() => {
-    if (window.location.pathname === "/pagamento" || window.location.pathname === "/cadastrofuncionario"|| window.location.pathname === "/cadastroempresa" || window.location.pathname === "/cadastrostartup"){
+    if (window.location.pathname === "/pagamento" || window.location.pathname === "/cadastrofuncionario" || window.location.pathname === "/cadastroempresa" || window.location.pathname === "/cadastrostartup"){
     setProsicaoTela(null)
   }
   })

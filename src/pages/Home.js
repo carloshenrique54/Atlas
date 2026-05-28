@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDesktop, faCircleCheck, faBuilding, faUser,
@@ -36,7 +36,7 @@ function Home() {
         }
       });
     }, {
-      threshold: 0.2
+      threshold: 0.3
     });
 
     reveals.forEach((el) => observer.observe(el));
