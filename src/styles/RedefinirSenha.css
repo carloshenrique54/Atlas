@@ -1,0 +1,39 @@
+.inputBox{
+    width: 100%;
+}
+
+.redefinirForms .inputBox input{
+    width: 94.5%;
+}
+
+.TrocarSenha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #080B2A;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: ease 0.3s;
+    margin-top: -15px;
+}
+
+.redefinirForms form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.redefinirForms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TrocarSenha:hover{
+    background-color: #080B2A;
+}

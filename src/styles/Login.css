@@ -1,0 +1,130 @@
+main{
+    display: flex;
+}
+
+main img{
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.loginForms{
+    display: flex;
+    opacity: 0;
+    transform: translateY(-1000px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    position: fixed;
+    transition: ease 0.8s;
+}
+
+.loginForms.active{
+    transform: translateY(0px);
+    opacity: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.loginForms .links{
+    display: flex;
+    font-size: 18px;
+}
+
+.loginForms .links a{
+    font-weight: 400;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+.loginForms .links a:hover{
+    text-decoration: underline;
+    transform: scale(1.1, 1.1);
+}
+
+.loginForms form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    width: 30%;
+    align-self: center;
+    border: 3px solid rgba(0, 0, 0, 0.080);
+    border-radius: 15px;
+    margin-bottom: 150px;
+    background-color: white;
+}
+
+.tituloLogin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tituloLogin h2{
+    color: #080B2A;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.tituloLogin svg{
+    color: #080B2A;
+    font-size: 30px;
+    cursor: pointer;
+}   
+
+label{
+    color: #080B2A;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.loginForms form input{
+    font-size: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: solid 3px rgba(0, 0, 0, 0.080);
+    padding: 15px;
+    transition: ease 0.3s;
+}
+
+.loginForms form input:focus{
+    border: solid 3px #3647ff;
+}
+
+.fecharModal{
+    background-color: transparent;
+    border: none;
+    transition: ease 0.3s;
+}
+
+.fecharModal:hover{
+    color: #ffffff;
+    background-color: transparent;
+    transform: scale(1.1, 1.1);
+}
+
+.loginForms form .logar{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: center;
+    width: 100%;
+    background-color: #080B2A;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: ease 0.3s;
+    margin-bottom: 15px;
+}
+
+input:focus{
+    border: solid 3px #3647ff;
+}
