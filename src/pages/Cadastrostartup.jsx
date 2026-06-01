@@ -84,7 +84,7 @@ function Cadastro(){
         setAbrirToast(true)
         await delay(5000)
         setAbrirToast(false)
-        navigate("https://localhost/5173")
+        navigate("https://localhost/5174")
     }
 
     return(

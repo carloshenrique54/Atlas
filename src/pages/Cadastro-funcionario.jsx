@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../services/supabase";
 import "../styles/CadastroStartup.css";
+import bcrypt from "bcryptjs";
 
 function CadastroFuncionario() {
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -124,16 +125,18 @@ if (startupId) {
         }
 }
 
+        const senhaHash = await bcrypt.hash(senha, 10)
+
         const { error } = await supabase
             .from("funcionarios")
-            .insert([{ nome, email, telefone: telLimpo, cpf: cpfLimpo, empresa_id: empresaId, startup_id: startupId, senha }]);
+            .insert([{ nome: nome, email: email, telefone: telLimpo, cpf: cpfLimpo, empresa_id: empresaId, startup_id: startupId, senha: senhaHash }]);
         if (error) { alert("Erro: " + error.message); return; }
 
         setAlertToast("Cadastro realizado com sucesso! Realize o Login");
         setAbrirToast(true);
         await delay(3000);
         setAbrirToast(false);
-        navigate("/loginfuncionario");
+        navigate("https://localhost/loginfuncionario");
     }
 
     return (

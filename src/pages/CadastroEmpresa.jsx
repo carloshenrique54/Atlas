@@ -1,7 +1,8 @@
 import { useNavigate, Link } from "react-router-dom";
-import { supabase } from "../services/supabase.jsx";
+import { supabase } from "../services/supabase.js";
 import { useState } from "react";
 import "../styles/CadastroStartup.css";
+import bcrypt from "bcryptjs";
 
 function CadastroEmpresa() {
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -91,16 +92,18 @@ function CadastroEmpresa() {
             .insert([{ nome: nomeEmpresa, cnpj, numerofuncionarios: 1, dono_cpf: cpfLimpo, dono_email: email, codigoconvite: codigo }]);
         if (errorEmpresa) { alert("Erro: " + errorEmpresa.message); return; }
 
+        const senhaHash = await bcrypt.hash(senha, 10)
+
         const { error: errorUsuario } = await supabase
             .from("usuarios")
-            .insert([{ cpf: cpfLimpo, nome: nomeUsuario, email, plano: "Growth", senha, telefone: telLimpo }]);
+            .insert([{ cpf: cpfLimpo, nome: nomeUsuario, email: email, plano: "Growth", senha: senhaHash, telefone: telLimpo }]);
         if (errorUsuario) { alert("Erro: " + errorUsuario.message); return; }
 
         setAlertToast("Cadastro realizado com sucesso! Realize o Login");
         setAbrirToast(true);
         await delay(4000);
         setAbrirToast(false);
-        navigate("/");
+        navigate("https://localhost:5174/");
     }
 
     return (
